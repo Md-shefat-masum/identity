@@ -74,7 +74,8 @@
 
                                 <form class="form p-t-20" method="POST" action="" enctype="multipart/form-data">
                                     <div class="form-group">
-                                        <label for="exampleInputuname">Image</label>
+                                        <label for="exampleInputuname">Image</label><br>
+                                        <img src="{{asset('uploads')}}/{{$select->image}}" width="150px" height="100px" alt=""><br>
                                         <div class="input-group">
                                             <input type="file" class="form-control" id="exampleInputuname" placeholder="">
                                         </div>
