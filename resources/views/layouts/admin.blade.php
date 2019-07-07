@@ -208,6 +208,7 @@
                                 <li><a href="{{route('frontend_logo')}}">logo </a></li>
                                 <li><a href="{{route('frontend_nav')}}">navbar </a></li>
                                 <li><a href="{{route('frontend_banner')}}">banner </a></li>
+                                <li><a href="{{route('frontend_aboutme')}}">about me </a></li>
                             </ul>
                         </li>
 
