@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\frontnavs;
 use Carbon\Carbon;
 use Image;
-use session;
+use Session;
 
 
 class navController extends Controller

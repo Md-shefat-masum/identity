@@ -4,7 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use session;
+use Session;
 use auth;
 use Carbon\Carbon;
 use image;

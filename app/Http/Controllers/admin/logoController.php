@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\frontlogo;
 use Carbon\Carbon;
 use Image;
-use session;
+use Session;
 
 
 class logoController extends Controller

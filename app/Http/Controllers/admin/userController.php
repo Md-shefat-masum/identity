@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\user;
 use Carbon\Carbon;
 use Image;
-use session;
+use Session;
 
 
 class userController extends Controller

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\banner;
 use Carbon\Carbon;
 use Image;
-use session;
+use Session;
 
 
 class bannerController extends Controller
@@ -78,7 +78,8 @@ class bannerController extends Controller
         }
 
         if($update){
-            return redirect()->route('frontend_banner');
+            Session::flash('success','value');
+            return redirect()->route('frontend_banner_update',$slug);
         }
     }
 

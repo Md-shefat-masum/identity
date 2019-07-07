@@ -59,6 +59,12 @@
                                     <h4 class="card-title">update banner informations</h4>
                                     <form class="form p-t-20" enctype="multipart/form-data" method="POST" action="{{route('frontend_banner_update_banner',$item->slug)}}">
                                         @csrf
+                                        @if(Session::has('success'))
+                                            <script>
+                                                swal({title: "Success!", text: "Successfully banner uploaded !", icon: "success",timer:5000});
+                                            </script>
+                                        @endif
+
                                         <div class="form-group">
                                             <label for="exampleInputuname">upload Banner pic</label>
                                             <div class="input-group">
