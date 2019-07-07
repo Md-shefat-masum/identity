@@ -79,8 +79,42 @@ class bannerController extends Controller
 
         if($update){
             Session::flash('success','value');
-            return redirect()->route('frontend_banner_update',$slug);
+            return redirect()->route('frontend_banner');
         }
     }
 
+    public function softdelete(Request $request , $slug){
+        $update=banner::where('slug',$slug)->update([
+            'status' => 0,
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        if($update){
+            Session::flash('deleted','value');
+            return redirect()->route('frontend_banner_trash_view');
+        }
+    }
+
+    public function restore(Request $request , $slug){
+        $update=banner::where('slug',$slug)->update([
+            'status' => 1,
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        if($update){
+            Session::flash('restore','value');
+            return redirect()->route('frontend_banner');
+        }
+    }
+
+    public function trashview(Request $request){
+        $select=banner::where('status',0)->get();
+     	return view('admin.banner.trash',compact('select'));
+    }
+
+    public function delete(Request $request ,$slug){
+        $delete = banner::where('slug',$slug)->delete();
+        if($delete){
+            Session::flash('deleted','value');
+            return redirect()->route('frontend_banner_trash_view');
+        }
+    }
 }

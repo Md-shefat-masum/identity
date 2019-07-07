@@ -18,6 +18,7 @@
     {{-- <link href="{{asset('contents/admin')}}/css/colors/blue-dark.css" id="theme" rel="stylesheet"> --}}
     <link href="{{asset('contents/admin')}}/css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="{{asset('contents/admin')}}/css/own-style.css" id="theme" rel="stylesheet">
+    <script src="{{asset('contents/admin')}}/js/sweetalert.min.js"></script>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -252,7 +253,6 @@
     <script src="{{asset('contents/admin/assets')}}/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="{{asset('contents/admin')}}/js/app.js"></script>
     <script src="{{asset('contents/admin')}}/js/datatables.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/sweetalert.min.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/html5-editor/wysihtml5-0.3.0.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/html5-editor/bootstrap-wysihtml5.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/dropify/dist/js/dropify.min.js"></script>

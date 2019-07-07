@@ -9,13 +9,13 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Banner section</h3>
+                    <h3 class="text-themecolor">All Trashed Banners</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">admin</a></li>
                         <li class="breadcrumb-item">banner</li>
-                        <li class="breadcrumb-item active">all</li>
+                        <li class="breadcrumb-item active">trash</li>
                     </ol>
                 </div>
                 <div class="">
@@ -41,25 +41,19 @@
                                     <a href="{{route('frontend_banner_add')}}" type="button" class="btn btn-block btn-outline-primary" style="">Add New Banner</a>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
-                                    <a href="{{route('frontend_banner')}}" type="button" class="btn active btn-block btn-outline-primary">All Banner</a>
+                                    <a href="{{route('frontend_banner')}}" type="button" class="btn btn-block btn-outline-primary">All Banner</a>
                                 </div>
                                 <div class="col-lg-4 col-md-4">
-                                    <a href="{{route('frontend_banner_trash_view')}}" type="button" class="btn btn-block btn-outline-primary">All Trash</a>
+                                    <a href="{{route('frontend_banner')}}" type="button" class="btn active btn-block btn-outline-primary">All Trash</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="row el-element-overlay" style="margin-top:30px;">
-
-                    @if(Session::has('restore'))
+                    @if(Session::has('deleted'))
                         <script>
-                            swal({title: "Success!", text: "Successfully banner restored !", icon: "success",timer:5000});
-                        </script>
-                    @endif
-                    @if(Session::has('success'))
-                        <script>
-                            swal({title: "Success!", text: "Successfully banner updated !", icon: "success",timer:5000});
+                            swal({title: "Success!", text: "Successfully banner deleted !", icon: "success",timer:5000});
                         </script>
                     @endif
                     @foreach ($select as $item)
@@ -71,7 +65,8 @@
                                             <ul class="el-info">
                                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{asset('uploads')}}/{{$item->name}}"><i class="icon-magnifier"></i></a></li>
                                                 <li><a class="btn default btn-outline" href="{{route('frontend_banner_update',$item->slug)}}"><i class="icon-link"></i></a></li>
-                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_soft_delete',$item->slug)}}"><i class="icon-trash"></i></a></li>
+                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_restore',$item->slug)}}"><i class="icon-plus"></i></a></li>
+                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_delete',$item->slug)}}"><i class="icon-trash"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>

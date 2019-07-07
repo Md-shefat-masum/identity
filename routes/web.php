@@ -47,5 +47,10 @@ Route::group(['namespace' => 'admin'], function () {
     Route::post('/admin/frontend/banner-add-new', 'bannerController@addbanner')->name('frontend_banner_add_new');
     Route::get('/admin/frontend/banner-update/{slug}', 'bannerController@update')->name('frontend_banner_update');
     Route::post('/admin/frontend/banner-update-banner/{slug}', 'bannerController@update_banner')->name('frontend_banner_update_banner');
-    Route::get('/admin/frontend/banner-delete', 'bannerController@delete')->name('frontend_banner_delete');
+    Route::get('/admin/frontend/banner-soft-delete/{slug}', 'bannerController@softdelete')->name('frontend_banner_soft_delete');
+    Route::get('/admin/frontend/banner-restore/{slug}', 'bannerController@restore')->name('frontend_banner_restore');
+    Route::get('/admin/frontend/banner-delete/{slug}', 'bannerController@delete')->name('frontend_banner_delete');
+    Route::get('/admin/frontend/banner-trash-view', 'bannerController@trashview')->name('frontend_banner_trash_view');
+    // about me part routes
+    Route::get('/admin/frontend/aboutme','aboutmeController@index')->name('frontedend_aboutme');
 });
