@@ -19,66 +19,41 @@ class aboutmeController extends Controller
     public function index(){
         $select=aboutme::where('id',1)->firstOrFail();
         return view('admin.aboutme.index',compact('select'));
-        //return view('',compact(''));
-        //return redirect('')->route('');
-    }
-    /* add info */
-    public function addView(){
-      //return view('');
-      //return view('',compact(''));
-      //return redirect('')->route('');
-    }
-    public function add(){
-        $slug = 'donner'.uniqid(20);
-        $insert= databaseName::insert([
-          '' => $_POST[''],
-          'slug' => $slug,
-          'created_at' => Carbon::now()->toDateTimeString()
-        ]);
-        if($insert){
-          // return view('website.home');
-          return redirect()->route('');
-        }
-        //return view('');
-        //return redirect('')->route('');
-    }
-      /* update info */
-    public function updateView(Request $request,$slug){
-        //return view('');
-        //return view('',compact(''));
-        //return redirect()->route('');
     }
 
     public function update(Request $request,$slug){
-      $update=databaseName::where('slug',$slug)->update([
-        '' => $_POST[''],
+
+      $update=aboutme::where('slug',$slug)->update([
+        'heading' => $_POST['heading'],
+        'sub_heading' => $_POST['sub_heading'],
+        'paragraph' => $_POST['paragraph'],
+        'name' => $_POST['name'],
+        'occupation' => $_POST['occupation'],
+        'birthdate' => $_POST['birthdate'],
+        'phone' => $_POST['phone'],
+        'email' => $_POST['email'],
+        'website' => $_POST['website'],
+        'address' => $_POST['address'],
+        'happy_client' => $_POST['happy_client'],
+        'experience' => $_POST['experience'],
+        'award' => $_POST['award'],
+        'project_done' => $_POST['project_done'],
         'updated_at' => Carbon::now()->toDateTimeString()
       ]);
 
-      if($update){
-         return redirect()->route('');
-      }
-      //return view();
-      //return redirect()->route();
+      if($request -> hasFile('file')){
+            $image = $request->file('file');
+            $ImageName = 'aboutme'.'_'.$slug.'_'.time().'.'.$image->getClientOriginalExtension();
+            Image::make($image)->save('uploads/'.$ImageName);
+            aboutme::where('slug',$slug)->update([
+            'image' => $ImageName
+            ]);
+        }
+
+        if($update){
+            Session::flash('success','value');
+            return redirect()->route('frontend_aboutme');
+        }
     }
-    /* delete info*/
-    public function softDelete(Request $request,$slug){
-      $soft=dbName::where('slug',slug)->update([
-          'status'=>0,
-          'updated_at' => Carbon::now()->toDateTimeString()
-      ]);
-      if($soft){
-         return redirect()->route('');
-       }
-      //return view();
-      //return redirect()->route();
-    }
-    public function hardDelete(Request $request,$slug){
-      $hard=dbName::where('slug',$slug)->delete();
-      if($hard){
-         return redirect()->route('');
-       }
-      //return view();
-      //return redirect()->route();
-    }
+
 }

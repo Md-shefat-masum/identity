@@ -44,21 +44,6 @@
 			</div>
 		</div>
 		<!-- END REVOLUTION SLIDER -->
-
-		<!--div class="slide-content">
-	<div class="text-center">
-		<div class="header">
-			<div class="heading">
-				Welcome to my site
-			</div>
-			<div class="box-heading">
-				<div class="box-inner">
-					Jonathan Doe
-				</div>
-			</div>
-		</div>
-	</div>
-</div-->
 	</section>
 	<!-- Home Section -->
 	<!-- About Section -->
@@ -70,7 +55,7 @@
 					<div>
 						<span class="fa fa-user fa-2x"></span>
 					</div>
-					<h1>About <span>Me</span></h1>
+					<h1>{{$aboume->heading}}</h1>
 				</div>
 				<!-- End Section Title -->
 			</div>

@@ -53,4 +53,5 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/frontend/banner-trash-view', 'bannerController@trashview')->name('frontend_banner_trash_view');
     // about me part routes
     Route::get('/admin/frontend/aboutme','aboutmeController@index')->name('frontend_aboutme');
+    Route::post('/admin/frontend/aboutme/update/{slug}','aboutmeController@update')->name('frontend_aboutme_update');
 });

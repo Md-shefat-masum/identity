@@ -11,6 +11,7 @@ use App\contact_message;
 use App\frontlogo;
 use App\frontnavs;
 use App\banner;
+use App\aboutme;
 
 class websiteController extends Controller
 {
@@ -23,7 +24,8 @@ class websiteController extends Controller
         $logo=frontlogo::where('id',1)->firstOrFail();
         $nav=frontnavs::get();
         $banner=banner::where('status',1)->get();
-        return view('website.index',compact('logo','nav','banner'));
+        $aboutme=aboutme::where('id',1)->firstOrFail();
+        return view('website.index',compact('logo','nav','banner','aboutme'));
     }
 
     // sending message to admin
