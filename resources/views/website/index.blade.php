@@ -55,58 +55,47 @@
 					<div>
 						<span class="fa fa-user fa-2x"></span>
 					</div>
-					<h1>{{$aboume->heading}}</h1>
+					<h1>{{$aboutme->heading}}</h1>
 				</div>
 				<!-- End Section Title -->
 			</div>
 			<div class="row">
 				<div class="col-md-4 text-center item_bottom">
-					<img src="{{asset('contents/website')}}/images/photo.jpg" class="img-center img-responsive" alt="My photo" />
+					<img src="{{asset('uploads')}}/{{$aboutme->image}}" class="img-center img-responsive" alt="My photo" />
 					<!-- YOUR PHOTO -->
 					<div class="name-title">
-						<h2>Jonathan Doe</h2>
+						<h2>{{$aboutme->name}}</h2>
 						<!-- Your Name -->
-						<h5>UI/UX Designer</h5>
+						<h5>{{$aboutme->occupation}}</h5>
 						<!-- Your Designation -->
 					</div>
 				</div>
 				<!-- some text about yourself -->
 				<div class="col-md-4 item_top">
 					<p class="quoteline">
-						Be who you are and say what you feel, because those who mind don't matter, and those who matter
-						don't mind.
+                        {{$aboutme->sub_heading}}
 					</p>
-					<p>
-						Hello, I'm a UI/UX Designer & Front End Developer from Dhaka, Bangladesh. I hold a master degree
-						of Web Design from the St. Patrick University.
-					</p>
-					<p>
-						I currently work at Intel, where I spend most of my time crafting and working on awesome
-						projects. Lorem ipsum dolor sit amet consectetuer Integer eleifend Curabitur id ut. Quisque
-						Aenean ut pede id elit ligula est mollis sapien magna. Urna turpis quis sagittis at ac Sed augue
-						habitant tortor elit. Dolor Quisque et elit aliquam vitae habitant.
-					</p>
+                    {!!$aboutme->paragraph!!}
 					<p class="text-right">
-						<img src="{{asset('contents/website')}}/images/signature.png" alt="signature" />
+						{{-- <img src="{{asset('contents/website')}}/images/signature.png" alt="signature" /> --}}
 					</p>
 				</div>
 				<!-- ./some text about yourself -->
 				<div class="col-md-4 item_bottom">
 					<!-- some information list -->
 					<ul class="fa-ul">
-						<li><i class="fa fa-li fa-calendar"></i><strong>Birthdate</strong> : 02/09/1982</li>
-						<li><i class="fa fa-li fa-mobile"></i><strong>Phone</strong> : +1 343-234-4343</li>
-						<li><i class="fa fa-li fa-envelope-o"></i><strong>Email</strong> : john@example.com</li>
-						<li><i class="fa fa-li fa-globe"></i><strong>Website</strong> : www.example.com</li>
-						<li><i class="fa fa-li fa-home"></i><strong>Adresse</strong> : 12 Segun Bagicha, 10th
-							Floor,<br>Dhaka 1000, Bangladesh.</li>
+						<li><i class="fa fa-li fa-calendar"></i><strong>Birthdate</strong> : {{$aboutme->birthdate}}</li>
+						<li><i class="fa fa-li fa-mobile"></i><strong>Phone</strong> : {{$aboutme->phone}}</li>
+						<li><i class="fa fa-li fa-envelope-o"></i><strong>Email</strong> : {{$aboutme->email}}</li>
+						<li><i class="fa fa-li fa-globe"></i><strong>Website</strong> : {{$aboutme->website}}</li>
+						<li><i class="fa fa-li fa-home"></i><strong>Adresse</strong> : {{$aboutme->address}}
 					</ul>
 					<!-- ./some information list -->
 					<!-- some number facts -->
 					<div class="number-counters text-center new-line">
 						<div class="counters-item">
 							<i class="fa fa-group fa-2x"></i>
-							<strong data-to="150">0</strong>
+							<strong data-to="{{$aboutme->happy_client}}">0</strong>
 							<!-- Set Your Number here. i,e. data-to="56" -->
 							<p>
 								Happy Clients
@@ -114,7 +103,7 @@
 						</div>
 						<div class="counters-item">
 							<i class="fa fa-flag fa-2x"></i>
-							<strong data-to="7">0</strong>
+							<strong data-to="{{$aboutme->experience}}">0</strong>
 							<!-- Set Your Number here. i,e. data-to="56" -->
 							<p>
 								Year Experience
@@ -122,7 +111,7 @@
 						</div>
 						<div class="counters-item">
 							<i class="fa fa-trophy fa-2x"></i>
-							<strong data-to="13">0</strong>
+							<strong data-to="{{$aboutme->award}}">0</strong>
 							<!-- Set Your Number here. i,e. data-to="56" -->
 							<p>
 								Awards Won
@@ -130,7 +119,7 @@
 						</div>
 						<div class="counters-item">
 							<i class="fa fa-thumbs-up fa-2x"></i>
-							<strong data-to="520">0</strong>
+							<strong data-to="{{$aboutme->project_done}}">0</strong>
 							<!-- Set Your Number here. i,e. data-to="56" -->
 							<p>
 								Projects Done
