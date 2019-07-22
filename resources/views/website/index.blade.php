@@ -373,30 +373,7 @@
 							JUN 2012 to NOV 2013 </span>
 						<span class="arrow fa fa-play"></span>
 					</li>
-					<li class="note item_right">
-						<h4>Micro Web Planet</h4>
-						<h5>Web Developer</h5>
-						<p class="desc">
-							Lorem Ipsum roin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-							bibendum auctor, nisi elit consequat. Photoshop's version of Lorem Ipsum. Proin gravida nibh
-							vel velit auctor aliquet. Aenean sollicitudin, quis bibendum auctor, nisi elit consequat.
-						</p>
-						<span class="date">
-							Jan 2012 MAY 2012 </span>
-						<span class="arrow fa fa-play"></span>
-					</li>
-					<li class="note item_left">
-						<h4>Creative Solution</h4>
-						<h5>Web Designer</h5>
-						<p class="desc">
-							Lorem Ipsum roin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-							bibendum auctor, nisi elit consequat. Proin gravida nibh vel velit auctor aliquet. Aenean
-							sollicitudin, lorem quis bibendum auctor, nisi elit consequat.
-						</p>
-						<span class="date">
-							Jan 2011 to Dec 2012 </span>
-						<span class="arrow fa fa-play"></span>
-					</li>
+
 					<!-- Education -->
 					<li class="title">Education</li>
 					<li class="note item_left">
