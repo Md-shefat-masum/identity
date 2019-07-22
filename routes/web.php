@@ -105,6 +105,9 @@ Route::group(['namespace' => 'admin'], function () {
     Route::post('/admin/frontend/resume-add', 'resumeController@add')->name('resume_add');
     Route::get('/admin/frontend/resume-update-view/{slug}', 'resumeController@updateView')->name('resume_update_view');
     Route::post('/admin/frontend/resume-update/{slug}', 'resumeController@update')->name('resume_update');
-
+    // client part
+    Route::get('/admin/frontend/client', 'clientController@index')->name('client');
+    Route::post('/admin/frontend/client-post-add', 'clientController@add')->name('client_post_add');
+    Route::post('/admin/frontend/client-post-delete', 'clientController@delete')->name('client_post_delete');
 
 });

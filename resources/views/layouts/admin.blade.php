@@ -227,6 +227,7 @@
                                         <li><a href="{{route('resume')}}">sections </a></li>
                                     </ul>
                                 </li>
+                                <li><a href="{{route('client')}}">client's say </a></li>
                             </ul>
                         </li>
 
