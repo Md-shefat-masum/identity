@@ -349,8 +349,31 @@
 			</div>
 			<div class="row">
 				<ul class="timeline list-unstyled">
-					<!-- History Year -->
-					<li class="title">Present</li>
+                    <!-- History Year -->
+                    @php
+                        $i=0;
+                    @endphp
+                    @foreach ($myresume as $item)
+                    @php
+                        if($i%2==0)
+                            $l = "item_left";
+                            
+                            $l = 'item_right';
+                    @endphp
+                    <li class="title">{{$item->section_name}}</li>
+					<li class="note {{$l}}">
+						<h4>{{$item->section_heading}}</h4>
+						<h5>{{$item->section_sub_heading}} Manager</h5>
+						<p class="desc">
+							{{$item->section_details}}
+						</p>
+						<span class="date">
+							{{$item->start_date}} to {{$item->end_date}}</span>
+						<span class="arrow fa fa-play"></span>
+                    </li>
+                    {{-- @php $i++;echo $i; @endphp --}}
+                    @endforeach
+					{{-- <li class="title">Present</li>
 					<li class="note item_right">
 						<h4>Creative Agency</h4>
 						<h5>Project Manager</h5>
@@ -396,7 +419,7 @@
 						<span class="date">
 							2007 - 2011 </span>
 						<span class="arrow fa fa-play"></span>
-					</li>
+					</li> --}}
 					<!-- Start icon -->
 					<li class="start fa fa-bookmark"></li>
 					<li class="clear"></li>

@@ -18,6 +18,8 @@ use App\portfolioimage;
 use App\personalskill;
 use App\languageskill;
 use App\biodata;
+use App\resumeCategory;
+use App\myresume;
 
 class websiteController extends Controller
 {
@@ -36,8 +38,9 @@ class websiteController extends Controller
         $skill=personalskill::where('status',1)->get();
         $lskill=languageskill::where('status',1)->get();
         $cv=biodata::select('file')->where('id',1)->firstOrFail();$cv=$cv->file;
+        $myresume=myresume::get();
 
-        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv'));
+        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume'));
     }
 
     // sending message to admin
