@@ -372,57 +372,9 @@
                                 {{$item->start_date}} to {{$item->end_date}}</span>
                             <span class="arrow fa fa-play"></span>
                         </li>
-                        {{-- @php $i++;echo $i; @endphp --}}
                         @endforeach
                     @endforeach
 
-					{{-- <li class="title">Present</li>
-					<li class="note item_right">
-						<h4>Creative Agency</h4>
-						<h5>Project Manager</h5>
-						<p class="desc">
-							Lorem Ipsum roin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-							bibendum auctor, nisi elit consequat.
-						</p>
-						<span class="date">
-							DEC 2013 to Present</span>
-						<span class="arrow fa fa-play"></span>
-					</li>
-					<li class="note item_left">
-						<h4>Infosys</h4>
-						<h5>UI/UX Designer</h5>
-						<p class="desc">
-							Lorem Ipsum roin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis
-							bibendum auctor, nisi elit consequat.
-						</p>
-						<span class="date">
-							JUN 2012 to NOV 2013 </span>
-						<span class="arrow fa fa-play"></span>
-					</li>
-
-					<!-- Education -->
-					<li class="title">Education</li>
-					<li class="note item_left">
-						<h4>Master Degree of Computer Science</h4>
-						<h5>Oxford University</h5>
-						<p class="desc">
-							This is Photoshop's version Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-						</p>
-						<span class="date">
-							2012 - 2013 </span>
-						<span class="arrow fa fa-play"></span>
-					</li>
-					<li class="note item_right">
-						<h4>Bechelor Degree of Computer Science</h4>
-						<h5>Oxford University</h5>
-						<p class="desc">
-							Lorem Ipsum. This is Photoshop's version Lorem Ipsum. Proin gravida nibh vel velit auctor
-							aliquet.
-						</p>
-						<span class="date">
-							2007 - 2011 </span>
-						<span class="arrow fa fa-play"></span>
-					</li> --}}
 					<!-- Start icon -->
 					<li class="start fa fa-bookmark"></li>
 					<li class="clear"></li>
