@@ -40,11 +40,26 @@
                    </script>
                 @endif
 
+                <div class="row">
+                        <div class="col-md-6 card m-auto">
+                            <div class="card-body">
+                                <div class="row button-group">
+                                    <div class="col-lg-6 col-md-6">
+                                        <a href="{{route('resume_add_view')}}" type="button" class="btn  btn-block btn-outline-primary" style="">Add New</a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <a href="{{route('resume')}}" type="button" class="btn active btn-block btn-outline-primary">All</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 <div class='row'>
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>
-                                <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('resume_update')}}">
+                                <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('resume_update',$select->slug)}}">
                                     @csrf
 
                                     <div class='form-group'>
@@ -54,7 +69,8 @@
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
                                             <select name='section_name' value='' class='form-control text-lower' id='exampleInputuname' placeholder='section name'>
-                                                @foreach ($select as $item)
+                                                <option value="{{$select->section_name}}">{{$select->section_name}}</option>
+                                                @foreach ($cat as $item)
                                                     <option value="{{$item->name}}">{{$item->name}}</option>
                                                 @endforeach
                                             </select>
@@ -67,7 +83,7 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='course_heading' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='course_heading' value='{{$select->course_heading}}' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
 
@@ -77,7 +93,7 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='course_subheading' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='course_subheading' value='{{$select->course_sub_heading}}' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
 
@@ -87,7 +103,7 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='course_details' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='course_details' value='{{$select->course_details}}' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
 
@@ -97,7 +113,7 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='start_date' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='start_date' value='{{$select->start_date}}' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
 
@@ -107,7 +123,7 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='end_date' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='end_date' value='{{$select->end_date}}' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
 

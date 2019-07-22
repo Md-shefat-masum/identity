@@ -40,7 +40,22 @@
                    </script>
                 @endif
 
-                <div class='row'>
+                <div class="row">
+                        <div class="col-md-6 card m-auto">
+                            <div class="card-body">
+                                <div class="row button-group">
+                                    <div class="col-lg-6 col-md-6">
+                                        <a href="{{route('resume_add_view')}}" type="button" class="btn active btn-block btn-outline-primary" style="">Add New</a>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <a href="{{route('resume')}}" type="button" class="btn  btn-block btn-outline-primary">All</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="row style='margin-top:30px;' ">
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>

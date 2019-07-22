@@ -93,4 +93,27 @@ class resumeController extends Controller
       //return view('add');
     }
 
+    public function updateView(Request $request,$slug){
+        $select = myresume::where('slug',$slug)->firstOrFail();
+        $cat = resumeCategory::orderBy('serial','ASC')->get();
+        return view('admin.resume.update_section',compact('select','cat'));
+    }
+    public function update(Request $request,$slug){
+        $update = myresume::where('slug',$slug)->update([
+            'section_name' => $_POST['section_name'],
+            'course_heading' => $_POST['course_heading'],
+            'course_sub_heading' => $_POST['course_subheading'],
+            'course_details' => $_POST['course_details'],
+            'start_date' => $_POST['start_date'],
+            'end_date' => $_POST['end_date'],
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        if($update){
+            Session::flash('success','value');
+            return redirect()->route('resume');
+        }
+      //return view('add');
+    }
+
 }

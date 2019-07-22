@@ -59,7 +59,7 @@
                                 <p>{{$item->course_details}}</p>
                                 <span>{{$item->start_date}}</span> &nbsp; TO &nbsp; <span>{{$item->end_date}}</span><br><br>
                                 <p>category: <b class="text-uppercase">{{$item->section_name}}</b></p>
-                                <a href="{{route('resume_update_view')}}" type="button" class="btn btn-block btn-outline-success">update</a>
+                                <a href="{{route('resume_update_view',$item->slug)}}" type="button" class="btn btn-block btn-outline-success">update</a>
                             </div>
                         </div>
                     </div>
