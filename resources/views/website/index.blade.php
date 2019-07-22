@@ -410,30 +410,14 @@
 
 							<div class="swiper-wrapper">
 
-								<!--First Slide-->
-								<div class="swiper-slide">
-									<p class="quote">"It’s easy to see the passion that the guys have for their work. He
-										really care about making unique designs for their clients, and put in incredible
-										effort to make the whole process a real pleasure."</p>
-									<p class="author">Jak Doe</p>
-									<p class="company">CEO <a href="#">@Intel</a></p>
-								</div>
-
-								<!--Second Slide-->
-								<div class="swiper-slide">
-									<p class="quote">"My website couldn’t look better after working with the him on the
-										redesign. Now my site and corporate branding is outstanding! He is awesome."</p>
-									<p class="author">John Doe</p>
-									<p class="company">Manager <a href="#">@Web Planet</a></p>
-								</div>
-
-								<!--Third Slide-->
-								<div class="swiper-slide">
-									<p class="quote">"I am incredibly happy with the increased traffic my site has
-										received since working with you! He is the best at this job."</p>
-									<p class="author">Jane Doe</p>
-									<p class="company">Owner <a href="#">@Creative Agency</a></p>
-								</div>
+                                <!--First Slide-->
+                                @foreach ($client as $client)
+                                    <div class="swiper-slide">
+                                        <p class="quote">"{{$client->comment}}"</p>
+                                        <p class="author">{{$client->name}}</p>
+                                        <p class="company">Contact: <a href="{{$client->occupation}}">{{$client->occupation}}</a></p>
+                                    </div>
+                                @endforeach
 							</div>
 							<!--/ .swiper-wrapper -->
 							<div class="pagination-testimonial"></div>

@@ -20,6 +20,7 @@ use App\languageskill;
 use App\biodata;
 use App\resumeCategory;
 use App\myresume;
+use App\clientsay;
 
 class websiteController extends Controller
 {
@@ -40,8 +41,9 @@ class websiteController extends Controller
         $cv=biodata::select('file')->where('id',1)->firstOrFail();$cv=$cv->file;
         $myresume=myresume::get();
         $resumecat=resumeCategory::orderBy('serial','ASC')->get();
+        $client = clientsay::get();
 
-        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
+        return view('website.index',compact('client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin

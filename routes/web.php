@@ -108,6 +108,6 @@ Route::group(['namespace' => 'admin'], function () {
     // client part
     Route::get('/admin/frontend/client', 'clientController@index')->name('client');
     Route::post('/admin/frontend/client-post-add', 'clientController@add')->name('client_post_add');
-    Route::post('/admin/frontend/client-post-delete', 'clientController@delete')->name('client_post_delete');
+    Route::get('/admin/frontend/client-post-delete/{slug}', 'clientController@delete')->name('client_post_delete');
 
 });
