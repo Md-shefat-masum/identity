@@ -21,7 +21,7 @@ class CreateMyresumesTable extends Migration
             $table->text('course_details');
             $table->string('start_date',100)->nullable();
             $table->string('end_date',100)->nullable();
-            $table->string('slug',35)->default('sdfdsfvdff');
+            $table->string('slug',35)->default('sasdfdfdsfvdff');
             $table->integer('status')->default(1);
             $table->timestamps();
         });
