@@ -9,13 +9,13 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">Navbar section</h3>
+                    <h3 class="text-themecolor">port folio category section</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">admin</a></li>
-                        <li class="breadcrumb-item">navbar</li>
-                        <li class="breadcrumb-item active">all</li>
+                        <li class="breadcrumb-item"> frontend </li>
+                        <li class="breadcrumb-item active">portfolio categories</li>
                     </ol>
                 </div>
                 <div class="">
@@ -33,21 +33,39 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+
+                <!-- controll bar -->
                 <div class="row">
-                    <div class="col-md-6 m-auto">
-                        <div class="card">
-                            <div class="card-body">
-                                @foreach ($select as $item)
-                                <form class="form p-t-20" method="POST" action="{{route('frontend_nav_update',$item->slug)}}">
+                    <div class="col-md-6 card m-auto">
+                        <div class="card-body">
+                            <div class="row button-group">
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="{{route('fortfolio_categories_add')}}" type="button" class="btn active btn-block btn-outline-primary" style="">Add New</a>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="{{route('fortfolio_categories')}}" type="button" class="btn  btn-block btn-outline-primary">All category</a>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <a href="{{route('frontend_service_trash')}}" type="button" class="btn btn-block btn-outline-primary">All Trash</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='row' style='margin:30px'>
+                    <div class='col-md-6 m-auto'>
+                        <div class='card'>
+                            <div class='card-body'>
+                                <form class='form p-t-20' method='POST' action="{{route('fortfolio_categories_addfn')}}">
                                     @csrf
-                                    <div class="form-group">
-                                        <div class="input-group">
-                                            <input type="text" name="name" value="{{$item->name}}" class="form-control text-capitalize" id="exampleInputuname" placeholder="">
+                                    <div class='form-group'>
+                                        <div class='input-group'>
+                                            <input type='text' name='name' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">update</button>
+                                    <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>add</button>
                                 </form>
-                                @endforeach
                             </div>
                         </div>
                     </div>

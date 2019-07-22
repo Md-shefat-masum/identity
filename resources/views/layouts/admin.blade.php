@@ -158,7 +158,7 @@
                     <div class="profile-text">
                         <h5>{{ Auth::user()->name }}</h5>
                         <a href="index.html#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
-                        <a href="{{route("message_index")}}" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
+                        <a href="{{route('message_index')}}" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
                         <a href="{{ route('logout') }}" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -209,6 +209,17 @@
                                 <li><a href="{{route('frontend_nav')}}">navbar </a></li>
                                 <li><a href="{{route('frontend_banner')}}">banner </a></li>
                                 <li><a href="{{route('frontend_aboutme')}}">about me </a></li>
+                                <li><a href="{{route('frontend_service')}}">services </a></li>
+                                <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
+                                    <span class="hide-menu">Port folio</span></a>
+                                    <ul aria-expanded="false" class="collapse">
+                                        <li><a href="{{route('fortfolio_categories')}}">categories </a></li>
+                                        <li><a href="{{route('portfolio_image')}}">images </a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="{{route('skills')}}">personal skills </a></li>
+                                <li><a href="{{route('lskills')}}">language skills </a></li>
+                                <li><a href="{{route('bio_data')}}">Biodata </a></li>
                             </ul>
                         </li>
 

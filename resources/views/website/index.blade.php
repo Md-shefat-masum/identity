@@ -130,54 +130,23 @@
 				</div>
 			</div>
 			<div class="row services">
+				@foreach($service as $item)
 				<div class="col-md-4">
 					<!-- Service -->
 					<div class="services-box new-line item_left">
-						<h4>Customer Support</h4>
+						<h4>{{$item->name}}</h4>
 						<div class="services-box-icon">
-							<i class="fa fa-smile-o fa-3x"></i>
+							<i class="{{$item->icon}} fa-3x"></i>
 						</div>
 						<div class="service-box-info">
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellesque
-								imperdiet. Nulla lacinia iaculis nulla.
+								{{$item->description}}
 							</p>
 						</div>
 					</div>
 					<!-- End Service -->
 				</div>
-				<div class="col-md-4">
-					<!-- Service -->
-					<div class="services-box new-line item_bottom">
-						<h4>Web Design</h4>
-						<div class="services-box-icon">
-							<i class="fa fa-html5 fa-3x"></i>
-						</div>
-						<div class="service-box-info">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellesque
-								imperdiet. Nulla lacinia iaculis nulla.
-							</p>
-						</div>
-					</div>
-					<!-- End Service -->
-				</div>
-				<div class="col-md-4 clearfix">
-					<!-- Service -->
-					<div class="services-box new-line item_right">
-						<h4>Wordpress Themes</h4>
-						<div class="services-box-icon">
-							<i class="fa fa-link fa-3x"></i>
-						</div>
-						<div class="service-box-info">
-							<p>
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellesque
-								imperdiet. Nulla lacinia iaculis nulla.
-							</p>
-						</div>
-					</div>
-					<!-- End Service -->
-				</div>
+				@endforeach
 			</div>
 		</div>
 	</section>
@@ -222,6 +191,32 @@
 								<!-- End #protfolio-control -->
 								<!-- Ajax will load into here -->
 								<div id="portfolio-ajax">
+								<div class="single-portfolio">
+          <div class="container">
+          <div class="row">
+              <div class="col-md-8" id="primary">
+                 <img alt="project1" src="{{asset('contents/website')}}/images/portfolio/thumb4.jpg" class="img-responsive">
+              </div>
+
+              <div class="col-md-4" id="secondary">
+                <!-- Project Summary -->
+                <div class="project-desc">
+                  <h3>Project Details</h3>
+                  <div class="line-strong"></div>
+                  <ul class="list-details">
+                    <li><i class="fa fa-calendar"></i> 10 March 2014</li>
+                    <li><i class="fa fa-tag"></i> video, logo</li>
+                    <li><i class="fa fa-globe"></i><a href="#">Live Demo</a></li>
+                  </ul>
+                  <p>Lorem ipsum dolor sit amet consectetuer malesuada congue et suscipit condimentum. Nulla at malesuada mauris ornare neque tellus ac Aenean adipiscing felis. Vestibulum turpis Nam pede eget elit feugiat Vestibulum neque Curabitur justo. Donec cursus semper urna consectetuer Nam Vivamus ut Pellentesque mauris laoreet. Vitae magna in at Nulla sodales vitae wisi tincidunt libero laoreet.</p>
+                </div>   
+                <!-- End Project Summary -->
+              </div>
+            </div>
+            <!-- End .row -->
+            </div>
+            <!-- End .container -->
+          </div>
 								</div>
 								<!-- End #portfolio-ajax -->
 								<!-- End Ajax -->
@@ -241,21 +236,12 @@
 							<li>
 								<a class="active" href="#" data-cat="*">ALL</a>
 							</li>
+							@foreach($portcategory as $item)
 							<li>
-								<a href="#" data-cat="design">Design</a>
+								<a href="#" data-cat="{{$item->name}}">{{$item->name}}</a>
 							</li>
-							<li>
-								<a href="#" data-cat="photo">Photography</a>
-							</li>
-							<li>
-								<a href="#" data-cat="video">Video</a>
-							</li>
-							<li>
-								<a href="#" data-cat="web">Web</a>
-							</li>
-							<li>
-								<a href="#" data-cat="mobile">Mobile</a>
-							</li>
+							@endforeach
+							
 						</ul>
 						<!--End portfolio category-->
 					</div>
@@ -271,162 +257,21 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div id="portfolio-items" class="portfolio-items item_fade_in">
-						<article class="design photo">
+						@foreach($portimage as $item)
+						<article class="{{$item->category}}">
 							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb1.jpg" alt="image" />
+								<img height="200px" src="{{asset('uploads')}}/{{$item->image}}" alt="{{$item->category}}" />
 								<div class="overlay">
 									<div class="item-info">
 										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Design / Photo</span>
+										<h3>{{$item->description}}</h3>
+										<span>dsf</span>
 									</div>
 								</div>
 								<!-- End .overlay -->
 							</a>
 						</article>
-						<article class="photo web video">
-							<a href="#!projects/project-video.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb2.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-film"></i>
-										<h3>Project with video</h3>
-										<span>Photo / Web</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="video design mobile">
-							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb3.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Design / Video</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="web photo">
-							<a href="#!projects/project-slider.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb4.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-picture-o"></i>
-										<h3>Project with gallery</h3>
-										<span>Web / Photo</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="mobile video">
-							<a href="#!projects/project-video.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb5.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-film"></i>
-										<h3>Project with video</h3>
-										<span>Mobile</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="photo video">
-							<a href="#!projects/project-slider.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb6.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-picture-o"></i>
-										<h3>Project with gallery</h3>
-										<span>Photo / Video</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="web mobile video">
-							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb7.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Web / Mobile</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="video photo web design">
-							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb8.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Video / Photo / Web</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="design photo">
-							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb9.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Design / Photo</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="web photo">
-							<a href="#!projects/project-slider.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb10.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-picture-o"></i>
-										<h3>Project with gallery</h3>
-										<span>Web / Photo</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="video design mobile">
-							<a href="#!projects/project-single.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb11.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>Project with single image</h3>
-										<span>Design / Video</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
-						<article class="photo web video">
-							<a href="#!projects/project-video.html">
-								<img src="{{asset('contents/website')}}/images/portfolio/thumb12.jpg" alt="image" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-film"></i>
-										<h3>Project with video</h3>
-										<span>Photo / Web</span>
-									</div>
-								</div>
-								<!-- End .overlay -->
-							</a>
-						</article>
+						@endforeach
 					</div>
 					<!-- End #portfolio-items.portfolio-items -->
 				</div>
@@ -449,100 +294,30 @@
 				<!-- End Section Title -->
 			</div>
 			<div class="row text-center item_bottom">
+			@foreach($skill as $item)
 				<div class="col-md-2">
-					<div class="chart" data-percent="91">
-						<span class="percent">91</span>
-						<h4>Photoshop</h4>
+					<div class="chart" data-percent="{{$item->percentage}}">
+						<span class="percent">{{$item->percentage}}</span>
+						<h4>{{$item->name}}</h4>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							{{$item->description}}
 						</p>
 					</div>
 				</div>
-				<div class="col-md-2 ">
-					<div class="chart" data-percent="60">
-						<span class="percent">60</span>
-						<h4>Illustrator</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="chart" data-percent="75">
-						<span class="percent">75</span>
-						<h4>HTML</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="chart" data-percent="80">
-						<span class="percent">80</span>
-						<h4>CSS</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="chart" data-percent="65">
-						<span class="percent">65</span>
-						<h4>jQuery</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="chart" data-percent="85">
-						<span class="percent">85</span>
-						<h4>PHP</h4>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</div>
-				</div>
+			@endforeach
 			</div>
 			<div class="row new-line item_bottom">
-				<div class="col-md-6">
-					<ul class="skillBar">
+			@foreach($lskill as $item)
+				<div class="col-md-4">
+					<ul class="skillBar" style="margin-top:0;">
 						<li>
 							<div class="skillBg">
-								<span data-width="80"><strong>Creative 80%</strong></span>
-							</div>
-						</li>
-						<li>
-							<div class="skillBg">
-								<span data-width="70"><strong>Leadership 70%</strong></span>
-							</div>
-						</li>
-						<li>
-							<div class="skillBg">
-								<span data-width="90"><strong>Interpersonal Communication 90%</strong></span>
+								<span data-width="{{$item->percentage}}"><strong>{{$item->name}} {{$item->percentage}}%</strong></span>
 							</div>
 						</li>
 					</ul>
 				</div>
-				<div class="col-md-6">
-					<ul class="skillBar">
-						<li>
-							<div class="skillBg">
-								<span data-width="80"><strong>English 80%</strong></span>
-							</div>
-						</li>
-						<li>
-							<div class="skillBg">
-								<span data-width="99"><strong>French 99%</strong></span>
-							</div>
-						</li>
-						<li>
-							<div class="skillBg">
-								<span data-width="60"><strong>Spanish 60%</strong></span>
-							</div>
-						</li>
-					</ul>
-				</div>
+			@endforeach
 			</div>
 			<!-- skills end -->
 		</div>

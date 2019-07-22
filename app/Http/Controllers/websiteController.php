@@ -12,12 +12,16 @@ use App\frontlogo;
 use App\frontnavs;
 use App\banner;
 use App\aboutme;
+use App\service;
+use App\portfoliocategory;
+use App\portfolioimage;
+use App\personalskill;
+use App\languageskill;
 
 class websiteController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
     }
 
     public function index(){
@@ -25,7 +29,12 @@ class websiteController extends Controller
         $nav=frontnavs::get();
         $banner=banner::where('status',1)->get();
         $aboutme=aboutme::where('id',1)->firstOrFail();
-        return view('website.index',compact('logo','nav','banner','aboutme'));
+        $service=service::where('status',1)->get();
+        $portcategory=portfoliocategory::where('status',1)->orderBy('name','asc')->get();
+        $portimage=portfolioimage::where('status',1)->orderBy('id','desc')->get();
+        $skill=personalskill::where('status',1)->get();
+        $lskill=languageskill::where('status',1)->get();
+        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill'));
     }
 
     // sending message to admin
@@ -43,5 +52,7 @@ class websiteController extends Controller
             return redirect()->route('website_index');
         }
     }
+
+    
 
 }

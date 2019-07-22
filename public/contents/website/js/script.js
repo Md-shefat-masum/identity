@@ -120,6 +120,7 @@ $(document).ready(function() {
                 $mainContent = $("#portfolio-ajax"),
                 $pageWrap = $("#portfolio-wrap"),
                 root = '#!projects/',
+                root = '{{asset("uploads")}}',
                 rootLength = root.length,
                 url;
             $portfolioItems.find("a").click(function() {

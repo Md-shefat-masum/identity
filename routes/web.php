@@ -54,4 +54,45 @@ Route::group(['namespace' => 'admin'], function () {
     // about me part routes
     Route::get('/admin/frontend/aboutme','aboutmeController@index')->name('frontend_aboutme');
     Route::post('/admin/frontend/aboutme/update/{slug}','aboutmeController@update')->name('frontend_aboutme_update');
+    // service section
+    Route::get('/admin/frontend/service','serviceController@index')->name('frontend_service');
+    Route::get('/admin/frontend/service-trash','serviceController@trash')->name('frontend_service_trash');
+    Route::get('/admin/frontend/service-add','serviceController@add')->name('frontend_service_add');
+    Route::post('/admin/frontend/service-addfn','serviceController@addfn')->name('frontend_service_addfn');
+    Route::post('/admin/frontend/service-update/{slug}','serviceController@update')->name('frontend_service_upadate');
+    Route::get('/admin/frontend/service-soft-delete/{slug}','serviceController@softdelete')->name('frontend_service_soft_delete');
+    Route::get('/admin/frontend/service-hard-delete/{slug}','serviceController@harddelete')->name('frontend_service_hard_delete');
+    Route::get('/admin/frontend/service-restore/{slug}','serviceController@restore')->name('frontend_service_restore');
+    // port folio category routes
+    Route::get('/admin/frontend/portfolio-category','portfolioController@index')->name('fortfolio_categories');
+    Route::get('/admin/frontend/portfolio-category-add','portfolioController@add')->name('fortfolio_categories_add');
+    Route::post('/admin/frontend/portfolio-category-addfn','portfolioController@addfn')->name('fortfolio_categories_addfn');
+    Route::get('/admin/frontend/portfolio-category-trash','portfolioController@trash')->name('fortfolio_categories_trash');
+    Route::get('/admin/frontend/portfolio-category-soft-delete/{slug}','portfolioController@softdelete')->name('fortfolio_categories_soft_delete');
+    Route::get('/admin/frontend/portfolio-categorydelete/{slug}','portfolioController@harddelete')->name('fortfolio_categories_delete');
+    Route::post('/admin/frontend/portfolio-category-update/{slug}','portfolioController@update')->name('fortfolio_categories_update');
+    // port folio images routes
+    Route::get('/admin/frontend/portfolio-images','portfolioimageController@index')->name('portfolio_image');
+    Route::get('/admin/frontend/portfolio-images-add','portfolioimageController@add')->name('portfolio_image_add');
+    Route::post('/admin/frontend/portfolio-images-addfn','portfolioimageController@addfn')->name('portfolio_image_addfn');
+    Route::get('/admin/frontend/portfolio-images-trash','portfolioimageController@trash')->name('portfolio_image_trash');
+    Route::get('/admin/frontend/portfolio-images-softdelete/{slug}','portfolioimageController@softdelete')->name('portfolio_image_softdelete');
+    Route::get('/admin/frontend/portfolio-images-harddelete/{slug}','portfolioimageController@harddelete')->name('portfolio_image_harddelete');
+    Route::get('/admin/frontend/portfolio-view','portfolioimageController@projectview')->name('portfolio_full_view');
+    // skills routes
+    Route::get('/admin/frontend/skill','personalskillController@index')->name('skills');
+    Route::get('/admin/frontend/skill-add','personalskillController@add')->name('skill_add');
+    Route::post('/admin/frontend/skill-add-fn','personalskillController@addfn')->name('skill_add_fn');
+    Route::post('/admin/frontend/skill-update-fn/{slug}','personalskillController@updatefn')->name('skill_update_fn');
+    Route::get('/admin/frontend/skill-delete-fn/{slug}','personalskillController@deletefn')->name('skill_delete_fn');
+    // language skill routes
+    Route::get('/admin/frontend/lskill','languageController@index')->name('lskills');
+    Route::get('/admin/frontend/lskill-add','languageController@add')->name('lskill_add');
+    Route::post('/admin/frontend/lskill-add-fn','languageController@addfn')->name('lskill_add_fn');
+    Route::post('/admin/frontend/lskill-update-fn/{slug}','languageController@updatefn')->name('lskill_update_fn');
+    Route::get('/admin/frontend/lskill-delete-fn/{slug}','languageController@deletefn')->name('lskill_delete_fn');
+    // cv routes
+    Route::get('/admin/frontend/cv','cvController@index')->name('bio_data');
+    Route::post('/admin/frontend/cv-update/{slug}','cvController@update')->name('bio_data_update');
+
 });
