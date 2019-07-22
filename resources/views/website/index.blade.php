@@ -352,27 +352,30 @@
                     <!-- History Year -->
                     @php
                         $i=0;
+                        $l;
                     @endphp
-                    @foreach ($myresume as $item)
-                    @php
-                        if($i%2==0)
-                            $l = "item_left";
-                            
-                            $l = 'item_right';
-                    @endphp
-                    <li class="title">{{$item->section_name}}</li>
-					<li class="note {{$l}}">
-						<h4>{{$item->section_heading}}</h4>
-						<h5>{{$item->section_sub_heading}} Manager</h5>
-						<p class="desc">
-							{{$item->section_details}}
-						</p>
-						<span class="date">
-							{{$item->start_date}} to {{$item->end_date}}</span>
-						<span class="arrow fa fa-play"></span>
-                    </li>
-                    {{-- @php $i++;echo $i; @endphp --}}
+
+                    @foreach ($resumecat as $cat)
+                        <li class="title">{{$cat->name}}</li>
+
+                        @php
+                            $data=App\myresume::where('section_name',$cat->name)->get();
+                        @endphp
+                        @foreach ($data as $item)
+                        <li class="note item_right">
+                            <h4>{{$item->course_heading}}</h4>
+                            <h5>{{$item->course_sub_heading}} Manager</h5>
+                            <p class="desc">
+                                {{$item->course_details}}
+                            </p>
+                            <span class="date">
+                                {{$item->start_date}} to {{$item->end_date}}</span>
+                            <span class="arrow fa fa-play"></span>
+                        </li>
+                        {{-- @php $i++;echo $i; @endphp --}}
+                        @endforeach
                     @endforeach
+
 					{{-- <li class="title">Present</li>
 					<li class="note item_right">
 						<h4>Creative Agency</h4>

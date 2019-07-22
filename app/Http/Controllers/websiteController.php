@@ -39,8 +39,9 @@ class websiteController extends Controller
         $lskill=languageskill::where('status',1)->get();
         $cv=biodata::select('file')->where('id',1)->firstOrFail();$cv=$cv->file;
         $myresume=myresume::get();
+        $resumecat=resumeCategory::get();
 
-        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume'));
+        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin
