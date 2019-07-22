@@ -23,6 +23,7 @@ use App\myresume;
 use App\clientsay;
 use App\partners;
 use App\process;
+use App\personalinfo;
 
 class websiteController extends Controller
 {
@@ -46,8 +47,9 @@ class websiteController extends Controller
         $client = clientsay::get();
         $partner = partners::get();
         $process = process::orderBy('serial','ASC')->get();
+        $social = personalinfo::get();
 
-        return view('website.index',compact('process','partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
+        return view('website.index',compact('social','process','partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin

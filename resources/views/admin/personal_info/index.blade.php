@@ -47,11 +47,11 @@
                                     @csrf
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>Icon</label>
+                                            <label for='name'>Icon <sub>check sidebar and choose font awesome icon class</sub></label>
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='icon' value='' class='form-control text-lower' id='exampleInputuname' placeholder='ex:facebook.com'>
+                                            <input name='icon' value='fa fa-' class='form-control text-lower' id='exampleInputuname' placeholder='fa fa-facebook'>
                                         </div>
                                     </div>
                                     <div class='form-group'>
@@ -60,14 +60,48 @@
                                         </div>
                                         <div class='input-group'>
                                             <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                            <input name='link' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
+                                            <input name='link' value='' class='form-control text-lower' id='exampleInputuname' placeholder='ex:facebook.com'>
                                         </div>
                                     </div>
-                                    <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>add LINK</button>
-                                </form>
+                                    <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>add new</button>
+                                    </form>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class='row'>
+                    @foreach ($select as $select)
+                        <div class='col-md-4'>
+                            <div class='card'>
+                                <div class='card-body'>
+                                    <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('social_link_update',$select->slug)}}">
+                                        @csrf
+                                        <div class='form-group'>
+                                            <div class='input-group'>
+                                                <label for='name'>Icon <sub>check sidebar and choose font awesome icon class</sub></label>
+                                            </div>
+                                            <div class='input-group'>
+                                                <div class='input-group-addon'><i class='{{$select->icon}}'></i></div>
+                                                <input name='icon' value='{{$select->icon}}' class='form-control text-lower' id='exampleInputuname' placeholder='fa fa-facebook'>
+                                            </div>
+                                        </div>
+                                        <div class='form-group'>
+                                            <div class='input-group'>
+                                                <label for='name'>link</label>
+                                            </div>
+                                            <div class='input-group'>
+                                                <div class='input-group-addon'><i class='{{$select->icon}}'></i></div>
+                                                <input name='link' value='{{$select->link}}' class='form-control text-lower' id='exampleInputuname' placeholder='ex:facebook.com'>
+                                            </div>
+                                        </div>
+                                        <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>Upadate</button>
+                                        <a href='{{route('social_link_delete',$select->slug)}}' class='btn btn-outline-danger text-capitalize waves-effect waves-light m-r-10'>Delete</a>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
 
                 <!-- ============================================================== -->

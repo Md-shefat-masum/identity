@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 17:33:30 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/layouts/admin.blade.php
+* routes/web.php
+
+
+Created files:
+* app/Http/Controllers/admin/personalinfoController.php
+* app/personalinfo.php
+* database/migrations/2019_07_23_050646_create_personalinfos_table.php
+* resources/views/admin/personal_info/icon.blade.php
+* resources/views/admin/personal_info/index.blade.php
+
+
+Deleted files:
+
+
+Renamed files:

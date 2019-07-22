@@ -506,21 +506,18 @@
 					<!-- Contact Details -->
 					<i class="fa fa-map-marker fa-3x"></i>
 					<p>
-						12 Segun Bagicha, 10th Floor <br>
-						Dhaka, Bangladesh
+                            {{$aboutme->address}}
 					</p>
 					<p>
-						+1 343-234-4343 <br />+0 243-243-4243
+                            {{$aboutme->phone}}
 					</p>
 					<!-- End Contact Details -->
 					<!-- Social Icon -->
 					<div class="social-icon">
-						<a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
-						<a href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
-						<a href="#"><i class="fa fa-google-plus-square fa-3x"></i></a>
-						<a href="#"><i class="fa fa-linkedin-square fa-3x"></i></a>
-						<a href="#"><i class="fa fa-pinterest-square fa-3x"></i></a>
-						<a href="#"><i class="fa fa-vimeo-square fa-3x"></i></a>
+                        @foreach ($social as $social)
+                            <a href="{{$social->link}}"><i class="{{$social->icon}}-square fa-3x"></i></a>
+                        @endforeach
+
 					</div>
 					<!-- End Social Icon -->
 				</div>
@@ -552,7 +549,7 @@
 	</section>
 	<!-- End Contact Section -->
 	<!-- Google maps -->
-	<div id="map_canvas" class="item_fade_in">
-	</div>
+	{{-- <div id="map_canvas" class="item_fade_in">
+	</div> --}}
 	<!-- End Google maps -->
 @endsection
