@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 06:13:24 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-22-6-2019-5-43-17.txt
+* app/Http/Controllers/admin/resumeController.php
+* resources/views/admin/resume/index.blade.php
+
+
+Deleted files:
+
+
+Renamed files:
