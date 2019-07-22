@@ -27,7 +27,7 @@ class cvController extends Controller
         $update=biodata::where('slug',$slug)->update([
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
-        
+
         if($request->hasFile('file')){
             $file=$request->file('file');
             // dd($file);
@@ -36,8 +36,8 @@ class cvController extends Controller
             // biodata::where('slug',$slug)->update([
             //     'file'=>$filename
             // ]);
-            $path=Storage::putFile('uploads',$filename);
-            return $path;
+            $path=Storage::putFile('uploads',$file);
+            // dd($path);
             biodata::where('slug',$slug)->update([
                 'file'=>$filename
             ]);
@@ -47,6 +47,6 @@ class cvController extends Controller
             Session::flash('success','value');
             return redirect()->route('bio_data');
         }
-        
+
     }
 }
