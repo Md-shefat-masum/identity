@@ -103,6 +103,8 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/frontend/resume-section', 'resumeController@index')->name('resume');
     Route::get('/admin/frontend/resume-add-view', 'resumeController@addView')->name('resume_add_view');
     Route::post('/admin/frontend/resume-add', 'resumeController@add')->name('resume_add');
+    Route::get('/admin/frontend/resume-update-view/{slug}', 'resumeController@updateView')->name('resume_update_view');
+    Route::post('/admin/frontend/resume-update/{slug}', 'resumeController@update')->name('resume_update');
 
 
 });

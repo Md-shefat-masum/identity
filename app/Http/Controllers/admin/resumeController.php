@@ -18,8 +18,8 @@ class resumeController extends Controller
     }
 
     public function index(Request $request){
-
-        return view('admin.resume.index');
+        $select = myresume::orderBy('section_name','ASC')->get();
+        return view('admin.resume.index',compact('select'));
     }
 
     public function resumeindex(Request $request){
