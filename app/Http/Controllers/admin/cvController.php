@@ -29,21 +29,11 @@ class cvController extends Controller
         ]);
 
         $delete=biodata::where('slug',$slug)->select('file')->firstOrFail();
-        // dd($delete->file);
-        $delete= "'". $delete->file . "'"'";
-        dd($delete);
-        Storage::disk('public')->delete($delete);
+        Storage::disk('public')->delete($delete->file);
 
         if($request->hasFile('file')){
             $file=$request->file('file');
-            // dd($file);
-            $filename=$file->getClientOriginalName();
-            // Storage::$file->store('uploads/'.$filename);
-            // biodata::where('slug',$slug)->update([
-            //     'file'=>$filename
-            // ]);
             $path=Storage::putFile('uploads/cv',$file);
-            // dd($path);
             biodata::where('slug',$slug)->update([
                 'file'=>$path
             ]);

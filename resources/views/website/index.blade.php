@@ -209,7 +209,7 @@
                     <li><i class="fa fa-globe"></i><a href="#">Live Demo</a></li>
                   </ul>
                   <p>Lorem ipsum dolor sit amet consectetuer malesuada congue et suscipit condimentum. Nulla at malesuada mauris ornare neque tellus ac Aenean adipiscing felis. Vestibulum turpis Nam pede eget elit feugiat Vestibulum neque Curabitur justo. Donec cursus semper urna consectetuer Nam Vivamus ut Pellentesque mauris laoreet. Vitae magna in at Nulla sodales vitae wisi tincidunt libero laoreet.</p>
-                </div>   
+                </div>
                 <!-- End Project Summary -->
               </div>
             </div>
@@ -241,7 +241,7 @@
 								<a href="#" data-cat="{{$item->name}}">{{$item->name}}</a>
 							</li>
 							@endforeach
-							
+
 						</ul>
 						<!--End portfolio category-->
 					</div>
@@ -329,7 +329,7 @@
 				<div class="col-md-12 text-center">
 					<h1 class="white padBottom killMargin">I am available for <strong>Freelancer</strong></h1>
 					<a href="#contact" class="scroll btn btn-trans btn-border-w btn-large">Hire Me</a>&nbsp;&nbsp;<a
-						class="btn btn-primary btn-lg" href="#"><i class="fa fa-download"></i> Download Resume</a>
+                    class="btn btn-primary btn-lg" target="_blank" href="{{asset('')}}{{$cv}}"><i class="fa fa-download"></i> Download Resume</a>
 				</div>
 			</div>
 		</div>

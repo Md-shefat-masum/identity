@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 04:14:53 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/admin/cvController.php
+* resources/views/admin/biodata/index.blade.php
+
+
+Created files:
+* .autogit/logs/log-22-6-2019-3-44-47.txt
+* public/uploads/cv/0IeVIcTPBcmXQvvxLd4mAesAU4NPuTblVapkOws6.pdf
+* public/uploads/cv/7ViFghFaqyHVY6EvytZbvnClbwDPbSDUPF4D9HvH.pdf
+* public/uploads/cv/FfaSCJ5bLa6NtmYiWrE0M0D6JHtl00in0M7Ft3Vu.pdf
+* public/uploads/cv/Mp4aYTHQYH1nCATGkmvzZJ0c6mgFpez6XU1XGwGc.pdf
+
+
+Deleted files:
+
+
+Renamed files:

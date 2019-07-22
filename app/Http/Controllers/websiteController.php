@@ -17,6 +17,7 @@ use App\portfoliocategory;
 use App\portfolioimage;
 use App\personalskill;
 use App\languageskill;
+use App\biodata;
 
 class websiteController extends Controller
 {
@@ -34,7 +35,9 @@ class websiteController extends Controller
         $portimage=portfolioimage::where('status',1)->orderBy('id','desc')->get();
         $skill=personalskill::where('status',1)->get();
         $lskill=languageskill::where('status',1)->get();
-        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill'));
+        $cv=biodata::select('file')->where('id',1)->firstOrFail();$cv=$cv->file;
+
+        return view('website.index',compact('logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv'));
     }
 
     // sending message to admin
@@ -53,6 +56,6 @@ class websiteController extends Controller
         }
     }
 
-    
+
 
 }
