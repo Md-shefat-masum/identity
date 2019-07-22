@@ -118,6 +118,13 @@ Route::group(['namespace' => 'admin'], function () {
     Route::post('/admin/frontend/process-add', 'processController@add')->name('process_add');
     Route::post('/admin/frontend/process-update/{slug}', 'processController@update')->name('process_update');
     Route::get('/admin/frontend/process-delete/{slug}', 'processController@delete')->name('process_delete');
+    // social links
+    Route::get('/admin/social-links', 'personalinfoController@index')->name('social_link');
+    Route::post('/admin/social-links-add', 'personalinfoController@add')->name('social_link_add');
+    Route::post('/admin/social-links-update/{slug}', 'personalinfoController@update')->name('social_link_update');
+    Route::get('/admin/social-links-delete/{slug}', 'personalinfoController@delete')->name('social_link_delete');
+    // font awesome icon
+    Route::get('/admin/font-awesome-icon', 'personalinfoController@icons')->name('font_icon');
 
 
 });

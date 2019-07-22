@@ -203,6 +203,13 @@
                             </a>
                         </li>
 
+                        <li>
+                            <a href="{{route('social_link')}}">
+                                <i class="fa fa-map"></i>
+                                <span class="hide-menu">social links</span>
+                            </a>
+                        </li>
+
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-pencil"></i><span class="hide-menu">Front end</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('frontend_logo')}}">logo </a></li>
@@ -240,6 +247,7 @@
                             </a>
                         </li> --}}
 
+                        <li> <a href="{{url('/admin/font-awesome-icon')}}" target="_blank"><i class="fa fa-code"></i><span class="hide-menu">font awesome icons</span></a></li>
                         <li> <a href="{{url('/')}}" target="_blank"><i class="fa fa-globe"></i><span class="hide-menu">Visit Site</span></a></li>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out"></i><span class="hide-menu">Logout </span></a>
 
