@@ -9,7 +9,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">resume section</h3>
+                    <h3 class="text-themecolor">add new resume section</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                <div class="row style='margin-top:30px;' ">
+                <div class="row" style='margin-top:30px;'>
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>

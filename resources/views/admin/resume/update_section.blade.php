@@ -9,7 +9,7 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">resume section</h3>
+                    <h3 class="text-themecolor">update resume section</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
@@ -48,14 +48,14 @@
                                         <a href="{{route('resume_add_view')}}" type="button" class="btn  btn-block btn-outline-primary" style="">Add New</a>
                                     </div>
                                     <div class="col-lg-6 col-md-6">
-                                        <a href="{{route('resume')}}" type="button" class="btn active btn-block btn-outline-primary">All</a>
+                                        <a href="{{route('resume')}}" type="button" class="btn btn-block btn-outline-primary">All</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                <div class='row'>
+                <div class='row' style='margin-top:30px;'>
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>
