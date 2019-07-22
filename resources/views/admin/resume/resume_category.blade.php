@@ -33,12 +33,17 @@
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
+                @if(Session::has('success'))
+                   <script>
+                         swal({title: "Success!", text: "Successfully done !", icon: "success",timer:5000});
+                   </script>
+                @endif
 
                 <div class='row'>
                   <div class='col-md-3'>
                     <div class='card'>
                         <div class='card-body'>
-                            <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="">
+                            <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('add_resume_category')}}">
                                 @csrf
                                 <div class='form-group'>
                                     <div class='input-group'>
@@ -63,6 +68,42 @@
                         </div>
                     </div>
                 </div>
+                </div>
+
+                <div class='row'>
+                @foreach ($select as $item)
+                  <div class='col-md-3'>
+                    <div class='card'>
+                        <div class='card-body'>
+                            <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('add_resume_category')}}">
+                                @csrf
+                                <div class='form-group'>
+                                    <div class='input-group'>
+                                        <label for='name'>update category</label>
+                                    </div>
+                                    <div class='input-group'>
+                                        <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
+                                        <input name='name' value='' class='form-control text-lower' id='exampleInputuname' placeholder='category name'>
+                                    </div>
+                                </div>
+                                <div class='form-group'>
+                                    <div class='input-group'>
+                                        <label for='name'>change serial no</label>
+                                    </div>
+                                    <div class='input-group'>
+                                        <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
+                                        <input name='serial' type="number" value='' class='form-control text-lower' id='exampleInputuname' placeholder='serial'>
+                                    </div>
+                                </div>
+                                <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>update</button>
+                                <button type='submit' class='btn btn-outline-danger text-capitalize waves-effect waves-light m-r-10'>delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+
+
 
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->

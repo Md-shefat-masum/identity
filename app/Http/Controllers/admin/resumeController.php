@@ -18,14 +18,16 @@ class resumeController extends Controller
     }
 
     public function index(Request $request){
-      return view('admin.resume.index');
+
+        return view('admin.resume.index');
     }
 
     public function resumeindex(Request $request){
-      return view('admin.resume.resume_category');
+        $select = resumeCategory::get();
+        return view('admin.resume.resume_category',compact('select'));
     }
 
-    public function addNewCategory(Request $request){
+    public function resumeadd(Request $request){
         $slug = 'slug'.uniqid(20);
         $insert = resumeCategory::insert([
             'name' => $_POST['name'],
@@ -40,6 +42,23 @@ class resumeController extends Controller
         }
       //return view('addNewCategory');
     }
+
+    public function resumeupdate(Request $request){
+        $insert = resumeCategory::update([
+            'name' => $_POST['name'],
+            'serial' => $_POST['serial'],
+            'slug' => $slug,
+            'created_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        if($insert){
+            Session::flash('success','value');
+            return redirect()->route('resume_category');
+        }
+      //return view('addNewCategory');
+    }
+
+
 
     public function add(Request $request){
         $slug = 'resume'.uniqid(30);
