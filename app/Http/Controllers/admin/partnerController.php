@@ -42,6 +42,9 @@ class partnerController extends Controller
     }
 
     public function delete(Request $request,$slug){
+        $delete=partners::where('slug',$slug)->firstOrFail();
+        Storage::disk('public')->delete($delete->image);
+
         $delete = partners::where('slug',$slug)->delete();
         if($delete){
             Session::flash('success','value');
