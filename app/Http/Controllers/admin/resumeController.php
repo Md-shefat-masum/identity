@@ -9,6 +9,7 @@ use Carbon\ Carbon;
 use Image;
 use Session;
 use Auth;
+use App\resumeCategory;
 
 class resumeController extends Controller
 {
@@ -18,6 +19,26 @@ class resumeController extends Controller
 
     public function index(Request $request){
       return view('admin.resume.index');
+    }
+
+    public function resumeindex(Request $request){
+      return view('admin.resume.resume_category');
+    }
+
+    public function addNewCategory(Request $request){
+        $slug = 'slug'.uniqid(20);
+        $insert = resumeCategory::insert([
+            'name' => $_POST['name'],
+            'serial' => $_POST['serial'],
+            'slug' => $slug,
+            'created_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        if($insert){
+            Session::flash('success','value');
+            return redirect()->route('resume_category');
+        }
+      //return view('addNewCategory');
     }
 
     public function add(Request $request){

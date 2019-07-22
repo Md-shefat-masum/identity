@@ -223,8 +223,8 @@
                                 <li><a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false">
                                     <span class="hide-menu">My resume</span></a>
                                     <ul aria-expanded="false" class="collapse">
-                                        <li><a href="{{route('resume')}}">categories </a></li>
-                                        <li><a href="{{route('resume_section')}}">sections </a></li>
+                                        <li><a href="{{route('resume_category')}}">categories </a></li>
+                                        <li><a href="{{route('resume')}}">sections </a></li>
                                     </ul>
                                 </li>
                             </ul>

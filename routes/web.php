@@ -95,7 +95,8 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/frontend/cv','cvController@index')->name('bio_data');
     Route::post('/admin/frontend/cv-update/{slug}','cvController@update')->name('bio_data_update');
     // resume categories
-    Route::get('/admin/frontend/resume-category', 'resumeController@index')->name('resume_section');
+    Route::get('/admin/frontend/resume-category', 'resumeController@resumeindex')->name('resume_category');
+    Route::post('/admin/frontend/resume-category-add', 'resumeController@resumeadd')->name('add_resume_category');
     // resume sections
     Route::get('/admin/frontend/resume-section', 'resumeController@index')->name('resume');
     Route::post('/admin/frontend/resume-add', 'resumeController@add')->name('resume_add');
