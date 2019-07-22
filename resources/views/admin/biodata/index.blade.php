@@ -47,7 +47,7 @@
                                     @csrf
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <a href="{{asset('uploads')}}/{{$cv->file}}" class="float-right btn btn-outline-secondary text-capitalize waves-effect waves-light m-r-10" target="_blank" >view C.V</a>
+                                            <a href="{{asset('')}}{{$cv->file}}" target="_parent" class="float-right btn btn-outline-secondary text-capitalize waves-effect waves-light m-r-10" target="_blank" >view C.V</a>
                                             <!-- <label for='name'>upload C.V</label> -->
                                         </div><br><br>
                                         <div class='input-group'>

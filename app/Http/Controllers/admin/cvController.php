@@ -28,10 +28,16 @@ class cvController extends Controller
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
 
+        $delete=biodata::where('slug',$slug)->select('file')->firstOrFail();
+        // dd($delete->file);
+        $delete= "'". $delete->file . "'"'";
+        dd($delete);
+        Storage::disk('public')->delete($delete);
+
         if($request->hasFile('file')){
             $file=$request->file('file');
             // dd($file);
-            // $filename=$file->getClientOriginalName();
+            $filename=$file->getClientOriginalName();
             // Storage::$file->store('uploads/'.$filename);
             // biodata::where('slug',$slug)->update([
             //     'file'=>$filename
