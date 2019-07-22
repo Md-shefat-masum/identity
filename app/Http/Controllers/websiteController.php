@@ -22,6 +22,7 @@ use App\resumeCategory;
 use App\myresume;
 use App\clientsay;
 use App\partners;
+use App\process;
 
 class websiteController extends Controller
 {
@@ -44,8 +45,9 @@ class websiteController extends Controller
         $resumecat=resumeCategory::orderBy('serial','ASC')->get();
         $client = clientsay::get();
         $partner = partners::get();
+        $process = process::orderBy('serial','ASC')->get();
 
-        return view('website.index',compact('partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
+        return view('website.index',compact('process','partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin

@@ -113,6 +113,11 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/frontend/partner', 'partnerController@index')->name('partner');
     Route::post('/admin/frontend/partner-add', 'partnerController@add')->name('partner_add');
     Route::get('/admin/frontend/partner-delete/{slug}', 'partnerController@delete')->name('partner_delete');
+    // process route
+    Route::get('/admin/frontend/process', 'processController@index')->name('process');
+    Route::post('/admin/frontend/process-add', 'processController@add')->name('process_add');
+    Route::post('/admin/frontend/process-update/{slug}', 'processController@update')->name('process_update');
+    Route::get('/admin/frontend/process-delete/{slug}', 'processController@delete')->name('process_delete');
 
 
 });
