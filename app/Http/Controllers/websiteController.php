@@ -21,6 +21,7 @@ use App\biodata;
 use App\resumeCategory;
 use App\myresume;
 use App\clientsay;
+use App\partners;
 
 class websiteController extends Controller
 {
@@ -42,8 +43,9 @@ class websiteController extends Controller
         $myresume=myresume::get();
         $resumecat=resumeCategory::orderBy('serial','ASC')->get();
         $client = clientsay::get();
+        $partner = partners::get();
 
-        return view('website.index',compact('client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
+        return view('website.index',compact('partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin

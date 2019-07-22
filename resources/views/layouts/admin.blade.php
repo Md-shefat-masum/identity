@@ -228,6 +228,7 @@
                                     </ul>
                                 </li>
                                 <li><a href="{{route('client')}}">client's say </a></li>
+                                <li><a href="{{route('partner')}}">partner's </a></li>
                             </ul>
                         </li>
 

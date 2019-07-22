@@ -111,7 +111,7 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/frontend/client-post-delete/{slug}', 'clientController@delete')->name('client_post_delete');
     // partner route
     Route::get('/admin/frontend/partner', 'partnerController@index')->name('partner');
-    Route::get('/admin/frontend/partner-add', 'partnerController@add')->name('partner_add');
+    Route::post('/admin/frontend/partner-add', 'partnerController@add')->name('partner_add');
     Route::get('/admin/frontend/partner-delete/{slug}', 'partnerController@delete')->name('partner_delete');
 
 

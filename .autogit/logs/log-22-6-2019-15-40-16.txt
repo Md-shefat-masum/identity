@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 15:40:16 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* routes/web.php
+
+
+Created files:
+* app/Http/Controllers/admin/partnerController.php
+* app/partners.php
+* database/migrations/2019_07_23_033231_create_partners_table.php
+* resources/views/admin/partner/index.blade.php
+
+
+Deleted files:
+
+
+Renamed files:

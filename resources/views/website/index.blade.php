@@ -435,12 +435,9 @@
 						<div id="left_scroll"><a href="#"></a></div>
 						<div id="carousel_inner">
 							<ul class="clearfix" id="carousel_ul">
-								<li><span><img src="{{asset('contents/website')}}/images/clients/twitter.png" alt="Twitter"></span></li>
-								<li><span><img src="{{asset('contents/website')}}/images/clients/magento.png" alt="magento"></span></li>
-								<li><span><img src="{{asset('contents/website')}}/images/clients/mailchimp.png" alt="mailchimp"></span></li>
-								<li><span><img src="{{asset('contents/website')}}/images/clients/nexternal.png" alt="nexternal"></span></li>
-								<li><span><img src="{{asset('contents/website')}}/images/clients/wordpress.png" alt="wordpress"></span></li>
-								<li><span><img src="{{asset('contents/website')}}/images/clients/google.png" alt="google"></span></li>
+                                @foreach ($partner as $partner)
+                                    <li><span><img src="{{asset('')}}{{$partner->image}}" alt="Twitter"></span></li>
+                                @endforeach
 							</ul>
 						</div>
 						<div id="right_scroll"><a href="#"></a></div>
