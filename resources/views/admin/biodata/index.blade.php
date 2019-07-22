@@ -59,7 +59,7 @@
                                             <input type='file' name='file' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>
                                         </div>
                                     </div>
-                                    
+
                                     <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>update information</button>
                                 </form>
                             </div>

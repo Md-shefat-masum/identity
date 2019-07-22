@@ -31,15 +31,15 @@ class cvController extends Controller
         if($request->hasFile('file')){
             $file=$request->file('file');
             // dd($file);
-            $filename=$file->getClientOriginalName();
+            // $filename=$file->getClientOriginalName();
             // Storage::$file->store('uploads/'.$filename);
             // biodata::where('slug',$slug)->update([
             //     'file'=>$filename
             // ]);
-            $path=Storage::putFile('uploads',$file);
+            $path=Storage::putFile('uploads/cv',$file);
             // dd($path);
             biodata::where('slug',$slug)->update([
-                'file'=>$filename
+                'file'=>$path
             ]);
         }
 
@@ -50,3 +50,4 @@ class cvController extends Controller
 
     }
 }
+
