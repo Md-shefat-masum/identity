@@ -97,8 +97,11 @@ Route::group(['namespace' => 'admin'], function () {
     // resume categories
     Route::get('/admin/frontend/resume-category', 'resumeController@resumeindex')->name('resume_category');
     Route::post('/admin/frontend/resume-category-add', 'resumeController@resumeadd')->name('add_resume_category');
+    Route::post('/admin/frontend/resume-category-update/{slug}', 'resumeController@resumeupdate')->name('resume_category_update');
+    Route::get('/admin/frontend/resume-category-delete/{slug}', 'resumeController@resumedelete')->name('resume_category_delete');
     // resume sections
     Route::get('/admin/frontend/resume-section', 'resumeController@index')->name('resume');
+    Route::get('/admin/frontend/resume-add-view', 'resumeController@addView')->name('resume_add_view');
     Route::post('/admin/frontend/resume-add', 'resumeController@add')->name('resume_add');
 
 

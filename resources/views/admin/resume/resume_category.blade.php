@@ -70,12 +70,12 @@
                 </div>
                 </div>
 
-                <div class='row'>
+            <div class='row'>
                 @foreach ($select as $item)
                   <div class='col-md-3'>
                     <div class='card'>
                         <div class='card-body'>
-                            <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('add_resume_category')}}">
+                            <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('resume_category_update',$item->slug)}}">
                                 @csrf
                                 <div class='form-group'>
                                     <div class='input-group'>
@@ -83,7 +83,7 @@
                                     </div>
                                     <div class='input-group'>
                                         <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                        <input name='name' value='' class='form-control text-lower' id='exampleInputuname' placeholder='category name'>
+                                        <input name='name' value='{{$item->name}}' class='form-control text-lower' id='exampleInputuname' placeholder='category name'>
                                     </div>
                                 </div>
                                 <div class='form-group'>
@@ -92,16 +92,17 @@
                                     </div>
                                     <div class='input-group'>
                                         <div class='input-group-addon'><i class='ti ti-pencil'></i></div>
-                                        <input name='serial' type="number" value='' class='form-control text-lower' id='exampleInputuname' placeholder='serial'>
+                                        <input name='serial' type="number" value='{{$item->serial}}' class='form-control text-lower' id='exampleInputuname' placeholder='serial'>
                                     </div>
                                 </div>
                                 <button type='submit' class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>update</button>
-                                <button type='submit' class='btn btn-outline-danger text-capitalize waves-effect waves-light m-r-10'>delete</button>
+                                <a href="{{route('resume_category_delete',$item->slug)}}" class='btn btn-outline-danger text-capitalize waves-effect waves-light m-r-10'>delete</a>
                             </form>
                         </div>
                     </div>
-                    @endforeach
                 </div>
+                @endforeach
+            </div>
 
 
 

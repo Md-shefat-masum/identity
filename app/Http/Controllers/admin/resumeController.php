@@ -23,7 +23,7 @@ class resumeController extends Controller
     }
 
     public function resumeindex(Request $request){
-        $select = resumeCategory::get();
+        $select = resumeCategory::orderBy('serial','ASC')->get();
         return view('admin.resume.resume_category',compact('select'));
     }
 
@@ -43,12 +43,11 @@ class resumeController extends Controller
       //return view('addNewCategory');
     }
 
-    public function resumeupdate(Request $request){
-        $insert = resumeCategory::update([
+    public function resumeupdate(Request $request,$slug){
+        $insert = resumeCategory::where('slug',$slug)->update([
             'name' => $_POST['name'],
             'serial' => $_POST['serial'],
-            'slug' => $slug,
-            'created_at' => Carbon::now()->toDateTimeString()
+            'updated_at' => Carbon::now()->toDateTimeString()
         ]);
 
         if($insert){
@@ -58,8 +57,21 @@ class resumeController extends Controller
       //return view('addNewCategory');
     }
 
+    public function resumedelete(Request $request,$slug){
+        $insert = resumeCategory::where('slug',$slug)->delete();
+
+        if($insert){
+            Session::flash('success','value');
+            return redirect()->route('resume_category');
+        }
+      //return view('addNewCategory');
+    }
 
 
+    public function addView(Request $request){
+        $select = resumeCategory::orderBy('serial','ASC')->get();
+        return view('admin.resume.add_section',compact('select'));
+    }
     public function add(Request $request){
         $slug = 'resume'.uniqid(30);
 
