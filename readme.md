@@ -1,11 +1,12 @@
 
     <p align="center" style="background: rgba(0,0,0,.6);padding: 10px;">
         <img src="http://mdshefat.com/contents/website/images/logo.png">
-            <h1 align="center">Identity</h1>
+            
+    </p>
+    <h1 align="center">Identity</h1>
             <h2 align="center">A personal portfolio website</h2>
             <h3 align="center">A full Laravel latest website</h3>
             <h4 align="center">view more live project visit: <a style='color:red;' href="http://mdshefat.com">mdshefat.com</a></h4>
-    </p>
 
     <p align="center">
         <a href="http://mdshefat.com/"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
