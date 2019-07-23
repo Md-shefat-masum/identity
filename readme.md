@@ -1,7 +1,6 @@
 
-    <p align="center" style="background: rgba(0,0,0,.6);padding: 10px;">
-        <img src="http://mdshefat.com/contents/website/images/logo.png">
-            
+    <p align="center">
+        <img src="http://mdshefat.com/contents/website/images/logo.png">   
     </p>
     <h1 align="center">Identity</h1>
             <h2 align="center">A personal portfolio website</h2>
