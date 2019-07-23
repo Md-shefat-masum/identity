@@ -1,10 +1,17 @@
 <p align="center"><img src="http://mdshefat.com/contents/website/images/logo.png"></p>
 
 <p align="center">
+<<<<<<< HEAD
 <a href="http://mdshefat.com/"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
 <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+=======
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+>>>>>>> 1deb07157073ff5275b59bfc370fd006779752de
 </p>
 
 ## About Laravel
