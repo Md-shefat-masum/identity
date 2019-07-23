@@ -1,67 +1,72 @@
+<p align="center"><img src="http://mdshefat.com/contents/website/images/logo.png"></p>
 
-    <p align="center" style="background: rgba(0,0,0,.6);padding: 10px;">
-        <img src="http://mdshefat.com/contents/website/images/logo.png">
-            
-    </p>
-    <h1 align="center">Identity</h1>
-            <h2 align="center">A personal portfolio website</h2>
-            <h3 align="center">A full Laravel latest website</h3>
-            <h4 align="center">view more live project visit: <a style='color:red;' href="http://mdshefat.com">mdshefat.com</a></h4>
+<p align="center">
+<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
+</p>
 
-    <p align="center">
-        <a href="http://mdshefat.com/"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-        <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/d/total.svg"
-                alt="Total Downloads"></a>
-        <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg"
-                alt="Latest Stable Version"></a>
-        <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/license.svg"
-                alt="License"></a>
-    </p>
+## About Laravel
 
-    <h1>
-        About project
-    </h1>
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-    <div class="user-html user-html__with-lazy-load">
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-        <p>A full Laravel latest (Laravel 5.7) website</p>
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-        <p>Beautifully displayed on iPhone, iPad, Android devices, and desktop computers. Intuitive user interface, easy
-            to use, and run fast with the latest design trends and optimal prgramming industry standards.</p>
+## Learning Laravel
 
-        <p>Built by a top notch U.S. team who run enterprise websites with global traffic.</p>
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-        Features:
-        <ul>
-            <li>Featured Articles</li>
-            <li>Top Stories of Today</li>
-            <li>News by Categories</li>
-            <li>Blog</li>
-            <li>Search</li>
-            <li>Admin Panel</li>
-            <li>Category Management</li>
-            <li>Post Management</li>
-            <li>Tag Management</li>
-            <li>User Management</li>
-            <li>Sort, Filter, Search <strong>NEW</strong>
-            </li>
-            <li>Advanced queries with Scope and Macro <strong>NEW</strong>
-            </li>
-            <li>SEO (Search Engine Optimized)</li>
-            <li>Responsive Design</li>
-        </ul>
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-        <ul>
-            <li>Optimize all Eloquent queries: use advanced techniques like scope, macro etc.)</li>
-            <li>Sort, filter, search for Categories, Posts, Tags, Users, and Groups pages</li>
-            <li>Added Groups</li>
-            <li>Improved UI</li>
-            <li>Based on Laravel 5.5 latest (4/27/2018)</li>
-        </ul>
+## Laravel Sponsors
 
-        <p>Disclaimer: This web app is a Laravel website. Since this app can work in a broad range of systems and
-            servers; we assume that you have some fundamental knowledge of your own stack (i.e. how to install Laravel,
-            NginX, MySQL etc.). Also, you need root access to your server, and you should be able to map the public/
-            directory of the Laravel app to your domain/sub-domain.</p>
-    </div>
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
+- **[Vehikl](https://vehikl.com/)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Cubet Techno Labs](https://cubettech.com)**
+- **[Cyber-Duck](https://cyber-duck.co.uk)**
+- **[British Software Development](https://www.britishsoftware.co)**
+- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
+- **[DevSquad](https://devsquad.com)**
+- [UserInsights](https://userinsights.com)
+- [Fragrantica](https://www.fragrantica.com)
+- [SOFTonSOFA](https://softonsofa.com/)
+- [User10](https://user10.com)
+- [Soumettre.fr](https://soumettre.fr/)
+- [CodeBrisk](https://codebrisk.com)
+- [1Forge](https://1forge.com)
+- [TECPRESSO](https://tecpresso.co.jp/)
+- [Runtime Converter](http://runtimeconverter.com/)
+- [WebL'Agence](https://weblagence.com/)
+- [Invoice Ninja](https://www.invoiceninja.com)
+- [iMi digital](https://www.imi-digital.de/)
+- [Earthlink](https://www.earthlink.ro/)
+- [Steadfast Collective](https://steadfastcollective.com/)
+- [We Are The Robots Inc.](https://watr.mx/)
+- [Understand.io](https://www.understand.io/)
+- [Abdel Elrafa](https://abdelelrafa.com)
+- [Hyper Host](https://hyper.host)
+
+## Contributing
+
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+
+## Security Vulnerabilities
+
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+## License
+
+The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
