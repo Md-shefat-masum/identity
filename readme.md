@@ -35,7 +35,6 @@ view more live project visit:<a style='color:red;' href="http://mdshefat.com">md
 -  Sort, filter, search for Categories, Posts, Tags, Users, and Groups pages  
 -  Added Groups  
 -  Improved UI  
--  Based on Laravel 5.5 latest (4/27/2018)  
 
 <p>Disclaimer: This web app is a Laravel website. Since this app can work in a broad range of systems and
             servers; we assume that you have some fundamental knowledge of your own stack (i.e. how to install Laravel,
