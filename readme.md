@@ -6,11 +6,10 @@
 <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="http://mdshefat.com/"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 
-## Identity
-## A personal portfolio website
+## Identity, A personal portfolio website
 ## A full Laravel latest website
-## view more live project visit:
-## <a style='color:red;' href="http://mdshefat.com">mdshefat.com</a>
+
+view more live project visit:<a style='color:red;' href="http://mdshefat.com">mdshefat.com</a>
 
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
