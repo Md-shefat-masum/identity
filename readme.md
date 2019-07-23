@@ -13,29 +13,29 @@ view more live project visit:<a style='color:red;' href="http://mdshefat.com">md
 
 ## Features:
          
-- [Featured Articles ]
-- [Top Stories of Today ]
-- [News by Categories ]
-- [Blog ]
-- [Search ]
-- [Admin Panel ]
-- [Category Management ]
-- [Post Management ]
-- [Tag Management ]
-- [User Management ]
-- [Sort, Filter, Search <strong>NEW</strong>
-]
-- [Advanced queries with Scope and Macro <strong>NEW</strong>
-]
-- [SEO (Search Engine Optimized) ]
-- [Responsive Design ]
+-  Featured Articles  
+-  Top Stories of Today  
+-  News by Categories  
+-  Blog  
+-  Search  
+-  Admin Panel  
+-  Category Management  
+-  Post Management  
+-  Tag Management  
+-  User Management  
+-  Sort, Filter, Search <strong>NEW</strong>
+ 
+-  Advanced queries with Scope and Macro <strong>NEW</strong>
+ 
+-  SEO (Search Engine Optimized)  
+-  Responsive Design  
 
 
-- [Optimize all Eloquent queries: use advanced techniques like scope, macro etc.) ]
-- [Sort, filter, search for Categories, Posts, Tags, Users, and Groups pages ]
-- [Added Groups ]
-- [Improved UI ]
-- [Based on Laravel 5.5 latest (4/27/2018) ]
+-  Optimize all Eloquent queries: use advanced techniques like scope, macro etc.)  
+-  Sort, filter, search for Categories, Posts, Tags, Users, and Groups pages  
+-  Added Groups  
+-  Improved UI  
+-  Based on Laravel 5.5 latest (4/27/2018)  
 
 <p>Disclaimer: This web app is a Laravel website. Since this app can work in a broad range of systems and
             servers; we assume that you have some fundamental knowledge of your own stack (i.e. how to install Laravel,
