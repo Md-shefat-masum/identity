@@ -35,15 +35,16 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php $i=1 @endphp
                             @foreach ($all as $data)
                             <tr>
-                                <td >{{$data->id}}</td>
-                                <td>{{$data->name}}</td>
-                                <td>{{$data->email}}</td>
-                                <td>{{$data->role_serial}}</td>
-                                <td>{{$data->creator}}</td>
-                                <td><img src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
-                                <td>
+                                <td style="vertical-align:middle;">{{$i++}}</td>
+                                <td style="vertical-align:middle;">{{$data->name}}</td>
+                                <td style="vertical-align:middle;">{{$data->email}}</td>
+                                <td style="vertical-align:middle;">{{$data->rolename->role_name}}</td>
+                                <td style="vertical-align:middle;">{{$data->creator}}</td>
+                                <td style="vertical-align:middle;"><img src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
+                                <td style="vertical-align:middle;">
                                     <a href="#" title="view user"><i class="fa fa-plus"></i></a>
                                     <a href="#" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>

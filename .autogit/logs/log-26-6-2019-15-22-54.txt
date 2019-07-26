@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jul 26 2019 15:22:54 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/admin/userController.php
+* resources/views/admin/user/all.blade.php
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-26-6-2019-14-52-47.txt
+* public/uploads/users/PpngBfrGXhQNdGhyrZRplXLaBT25CRYR5GoMAs5K.jpeg
+
+
+Deleted files:
+
+
+Renamed files:

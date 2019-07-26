@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\user;
 use App\user_role;
 use Carbon\Carbon;
+use DB;
 use Image;
 use Session;
 use Storage;
@@ -22,7 +23,9 @@ class userController extends Controller
 
     public function index()
     {
-        $all=user::all();
+        $all=user::get();
+        $all=DB::table('users')
+            ->join('user_roles','role_serial','=','user_roles.role_serial');
         return view('admin.user.all',compact('all'));
     }
 
