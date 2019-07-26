@@ -41,7 +41,7 @@
                                 <td style="vertical-align:middle;">{{$i++}}</td>
                                 <td style="vertical-align:middle;">{{$data->name}}</td>
                                 <td style="vertical-align:middle;">{{$data->email}}</td>
-                                <td style="vertical-align:middle;">{{$data->rolename->role_name}}</td>
+                                <td style="vertical-align:middle;">{{$data->rolename}}</td>
                                 <td style="vertical-align:middle;">{{$data->creator}}</td>
                                 <td style="vertical-align:middle;"><img src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
                                 <td style="vertical-align:middle;">

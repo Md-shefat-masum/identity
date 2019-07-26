@@ -24,8 +24,6 @@ class userController extends Controller
     public function index()
     {
         $all=user::get();
-        $all=DB::table('users')
-            ->join('user_roles','role_serial','=','user_roles.role_serial');
         return view('admin.user.all',compact('all'));
     }
 
