@@ -119,8 +119,6 @@ $(document).ready(function () {
             return false;
         });
     };
-
-
     portfolio.fullWidth();
     $(function () {
         $('.chart').appear(function () {
