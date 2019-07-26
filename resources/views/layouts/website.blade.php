@@ -18,6 +18,7 @@
 	<link type='text/css' href="{{asset('contents/website')}}/css/normalize.css" rel="stylesheet">
 	<link type='text/css' href="{{asset('contents/website')}}/css/bootstrap.min.css" rel="stylesheet">
 	<link type='text/css' href="{{asset('contents/website')}}/css/font-awesome.min.css" rel="stylesheet">
+	<link type='text/css' href="{{asset('contents/website')}}/css/lightbox.min.css" rel="stylesheet">
 	<link type='text/css' href="{{asset('contents/website')}}/css/style.css" rel="stylesheet">
 	<link type='text/css' href="{{asset('contents/website')}}/css/style-responsive.css" rel="stylesheet">
 	<!-- SLIDER REVOLUTION 4.x CSS SETTINGS -->
@@ -104,8 +105,12 @@
 	<script type="text/javascript" src="{{asset('contents/website')}}/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 	<script type="text/javascript" src="{{asset('contents/website')}}/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	<!-- END SLIDER REVOLUTION 4.x SCRIPTS  -->
+	<script type="text/javascript" src="{{asset('contents/website')}}/js/lightbox.min.js"></script>
 	<script type="text/javascript" src="{{asset('contents/website')}}/js/script.js"></script>
-	<!-- Js Library -->
+    <!-- Js Library -->
+    <script>
+
+    </script>
 </body>
 
 </html>

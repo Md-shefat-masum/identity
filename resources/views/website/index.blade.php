@@ -165,69 +165,6 @@
 				</div>
 				<!-- End Section title -->
 			</div>
-			<div class="portfolio-top">
-			</div>
-			<div id="portfolio-wrap" tabindex="1">
-				<div id="portfolio-page">
-					<div id="portfolio-content">
-						<div class="container">
-							<div class="row">
-								<div id="protfolio-control">
-									<div class="row">
-										<div class="col-md-4 col-sm-4 col-xs-4">
-											<a href="#" id="prev-project" title="Previous Project"><i
-													class="fa fa-arrow-left"></i></a>
-										</div>
-										<div class="col-md-4 col-sm-4 col-xs-4 text-center">
-											<a href="#" id="close-project" title="Close Project"><i
-													class="fa fa-times"></i></a>
-										</div>
-										<div class="col-md-4 col-sm-4 col-xs-4 text-right">
-											<a href="#" id="next-project" title="Next Project"><i
-													class="fa fa-arrow-right"></i></a>
-										</div>
-									</div>
-								</div>
-								<!-- End #protfolio-control -->
-								<!-- Ajax will load into here -->
-								<div id="portfolio-ajax">
-								<div class="single-portfolio">
-          <div class="container">
-          <div class="row">
-              <div class="col-md-8" id="primary">
-                 <img alt="project1" src="{{asset('contents/website')}}/images/portfolio/thumb4.jpg" class="img-responsive">
-              </div>
-
-              <div class="col-md-4" id="secondary">
-                <!-- Project Summary -->
-                <div class="project-desc">
-                  <h3>Project Details</h3>
-                  <div class="line-strong"></div>
-                  <ul class="list-details">
-                    <li><i class="fa fa-calendar"></i> 10 March 2014</li>
-                    <li><i class="fa fa-tag"></i> video, logo</li>
-                    <li><i class="fa fa-globe"></i><a href="#">Live Demo</a></li>
-                  </ul>
-                  <p>Lorem ipsum dolor sit amet consectetuer malesuada congue et suscipit condimentum. Nulla at malesuada mauris ornare neque tellus ac Aenean adipiscing felis. Vestibulum turpis Nam pede eget elit feugiat Vestibulum neque Curabitur justo. Donec cursus semper urna consectetuer Nam Vivamus ut Pellentesque mauris laoreet. Vitae magna in at Nulla sodales vitae wisi tincidunt libero laoreet.</p>
-                </div>
-                <!-- End Project Summary -->
-              </div>
-            </div>
-            <!-- End .row -->
-            </div>
-            <!-- End .container -->
-          </div>
-								</div>
-								<!-- End #portfolio-ajax -->
-								<!-- End Ajax -->
-							</div>
-						</div>
-					</div>
-					<!-- End #portfolio-content -->
-				</div>
-				<!-- End #portfolio-page -->
-			</div>
-			<!-- End #portfolio-wrap -->
 			<div id="portfolio-filter">
 				<div class="row text-center">
 					<div class="col-md-12">
@@ -259,17 +196,17 @@
 					<div id="portfolio-items" class="portfolio-items item_fade_in">
 						@foreach($portimage as $item)
 						<article class="{{$item->category}}">
-							<a href="#!projects/project-single.html">
-								<img height="200px" src="{{asset('uploads')}}/{{$item->image}}" alt="{{$item->category}}" />
-								<div class="overlay">
-									<div class="item-info">
-										<i class="fa fa-camera"></i>
-										<h3>{{$item->description}}</h3>
-										<span>dsf</span>
-									</div>
-								</div>
+                            <img height="200px" src="{{asset('uploads')}}/{{$item->image}}" alt="{{$item->category}}" />
+                            <div class="overlay">
+                                <div class="item-info">
+                                    <a href="{{asset('uploads')}}/{{$item->image}}" data-lightbox="Graphics Design"
+                                        title="Graphics"><i class="fa fa-search-plus"></i>
+                                    </a>
+                                    <h3>{{$item->description}}</h3>
+                                    <span>{{$item->category}}</span>
+                                </div>
+                            </div>
 								<!-- End .overlay -->
-							</a>
 						</article>
 						@endforeach
 					</div>
@@ -515,7 +452,7 @@
 					<!-- Social Icon -->
 					<div class="social-icon">
                         @foreach ($social as $social)
-                            <a href="{{$social->link}}"><i class="{{$social->icon}}-square fa-3x"></i></a>
+                            <a href="{{$social->link}}"><i class="{{$social->icon}} fa-3x"></i></a>
                         @endforeach
 
 					</div>

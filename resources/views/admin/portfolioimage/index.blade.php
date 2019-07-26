@@ -65,7 +65,7 @@
                                         <div class="el-overlay">
                                             <ul class="el-info">
                                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{asset('uploads')}}/{{$item->image}}"><i class="icon-magnifier"></i></a></li>
-                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_update',$item->slug)}}"><i class="icon-link"></i></a></li>
+                                                {{-- <li><a class="btn default btn-outline" href="{{route('frontend_banner_update',$item->slug)}}"><i class="icon-link"></i></a></li> --}}
                                                 <li><a class="btn default btn-outline" href="{{route('portfolio_image_softdelete',$item->slug)}}"><i class="icon-trash"></i></a></li>
                                             </ul>
                                         </div>

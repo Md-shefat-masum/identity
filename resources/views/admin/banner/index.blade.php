@@ -69,8 +69,8 @@
                                     <div class="el-card-avatar el-overlay-1"> <img class="img-fluid" style="height:200px;" src="{{asset('uploads')}}/{{$item->name}}" alt="{{$item->name}}" />
                                         <div class="el-overlay">
                                             <ul class="el-info">
-                                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{asset('uploads')}}/{{$item->name}}"><i class="icon-magnifier"></i></a></li>
-                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_update',$item->slug)}}"><i class="icon-link"></i></a></li>
+                                                <li><a class="btn default btn-outline image-popup-vertical-fit" data-lightbox='lsjd' href="{{asset('uploads')}}/{{$item->name}}"><i class="icon-magnifier"></i></a></li>
+                                                <li><a class="btn default btn-outline" href="{{route('frontend_banner_update',$item->slug)}}"> <i class="icon-link"></i></a></li>
                                                 <li><a class="btn default btn-outline" href="{{route('frontend_banner_soft_delete',$item->slug)}}"><i class="icon-trash"></i></a></li>
                                             </ul>
                                         </div>
