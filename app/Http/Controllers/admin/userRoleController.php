@@ -19,7 +19,7 @@ class userRoleController extends Controller
 
     public function index(Request $request)
     {
-        $all=user_role::where('status',1)->get();
+        $all=user_role::where('status',1)->orderBy('role_serial','ASC')->get();
         return view('admin.user_role.all',compact('all'));
     }
 
@@ -44,6 +44,27 @@ class userRoleController extends Controller
             Session::flash('success','value');
             return redirect()->route('user_role_index');
         }
+    }
 
+    public function update(Request $request,$slug){
+
+        $insert=user_role::where('slug',$slug)->update([
+            'role_name' => $_POST['name'],
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+
+        if($insert){
+            Session::flash('success','value');
+            return redirect()->route('user_role_index');
+        }
+
+    }
+
+    public function delete(Request $request,$slug){
+        $delete=user_role::where('slug',$slug)->delete();
+        if($delete){
+            Session::flash('success','value');
+            return redirect()->route('user_role_index');
+        }
     }
 }

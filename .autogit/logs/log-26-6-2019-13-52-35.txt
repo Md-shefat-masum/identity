@@ -1,0 +1,20 @@
+-------------------- Auto-Git Log --------------------
+		Fri Jul 26 2019 13:52:35 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/layouts/admin.blade.php
+* routes/web.php
+
+
+Created files:
+* app/Http/Controllers/admin/userRoleController.php
+* app/user_role.php
+* database/migrations/2019_07_26_235535_create_user_roles_table.php
+* resources/views/admin/user_role/all.blade.php
+
+
+Deleted files:
+
+
+Renamed files:
