@@ -193,6 +193,7 @@
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-user-circle"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('admin/user')}}">All User </a></li>
+                                <li><a href="{{route('user_role_index')}}">User Role </a></li>
                             </ul>
                         </li>
 

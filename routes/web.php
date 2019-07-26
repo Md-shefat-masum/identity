@@ -29,6 +29,10 @@ Route::get('/admin','adminController@view')->name('admin_index');
 Route::group(['namespace' => 'admin'], function () {
     // user info route
     Route::get('/admin/user','userController@index')->name('user_index');
+    // user role controll route
+    Route::get('/admin/user-role','userRoleController@index')->name('user_role_index');
+    Route::post('/admin/user-role-add','userRoleController@add')->name('user_role_add');
+    Route::post('/admin/user-role-update/{slug}','userRoleController@update')->name('user_role_update');
     // contact message routes
     Route::get('/admin/message','messageController@index')->name('message_index');
     Route::post('/admin/message/soft_delete_multiple/{id}', 'messageController@soft_delete_multiple')->name('soft_delete_multiple');
