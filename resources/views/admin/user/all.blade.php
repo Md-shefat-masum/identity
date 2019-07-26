@@ -37,7 +37,8 @@
                         <tbody>
                             @php $i=1 @endphp
                             @foreach ($all as $data)
-                            @php $name = $data->rolename; @endphp
+                            @php $check=$data->role_serial; $check= (int)$check; @endphp
+                            @php $role=App\user_role::where('role_serial',$check)->select('role_name')->firstOrFail();  @endphp
                             <tr>
                                 <td style="vertical-align:middle;">{{$i++}}</td>
                                 <td style="vertical-align:middle;">{{$data->name}}</td>
