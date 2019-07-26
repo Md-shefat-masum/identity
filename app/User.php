@@ -38,8 +38,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    // protected $touches = ['user_role'];
     public function rolename(){
-        // return $this->belongsTo('App\user_role','role_serial','role_serial');
-        return $this->belongsTo(user_role::class);
+        return $this->belongsTo('App\user_role','role_serial','role_serial');
+        // return $this->belongsTo('App\user_role');
+        // return $this->belongsTo(User)
     }
 }
