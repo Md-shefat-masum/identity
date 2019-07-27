@@ -19,6 +19,7 @@
     <link href="{{asset('contents/admin')}}/css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="{{asset('contents/admin')}}/css/own-style.css" id="theme" rel="stylesheet">
     <script src="{{asset('contents/admin')}}/js/sweetalert.min.js"></script>
+    <script src="{{asset('contents/admin')}}/js/ajax.js"></script>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -342,6 +343,11 @@
     </script>
 
 <script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
         window.onload = function () {
             var objDiv = document.getElementById("scroll");
             objDiv.scrollTop = objDiv.scrollHeight

@@ -30,6 +30,7 @@ Route::group(['namespace' => 'admin'], function () {
     // user info route
     Route::get('/admin/user','userController@index')->name('user_index');
     Route::post('/admin/add-user','userController@add')->name('user_add');
+    Route::get('/admin/view-user/{slug}','userController@view')->name('user_view');
     // user role controll route
     Route::get('/admin/user-role','userRoleController@index')->name('user_role_index');
     Route::post('/admin/user-role-add','userRoleController@add')->name('user_role_add');

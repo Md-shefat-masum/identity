@@ -52,4 +52,15 @@ class userController extends Controller
         }
     }
 
+    public function view(Request $request,$slug){
+        // $id = $request->id;
+        $user = user::where('slug',$slug)->firstOrFail();
+        if($user){
+            // return response()->json($user);
+            return view('admin.user.serach',compact('user'));
+        }else{
+            return response()->json('error');
+        }
+    }
+
 }

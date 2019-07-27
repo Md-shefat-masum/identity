@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	
+
   $("#addForm").on('submit', function(e) {
   	e.preventDefault();
   	var formurl = $(this).attr('action');
@@ -66,13 +66,13 @@ $(document).ready(function(){
   $("#viewData").on('click', function(e) {
     e.preventDefault();
     var id = $(this).data('id');
-    var url = 'admin/banner/view';
+    var url = '/admin/view-user';
     //console.log(id);
 
     $.ajax({
       url: url,
       type: 'GET',
-      data:{ban_id:id},
+      data:{id:id},
       cache: false,
       dataType:'json',
       success: function(data) {
