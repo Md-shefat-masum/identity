@@ -47,8 +47,9 @@
                                 <td style="vertical-align:middle;">{{$data->creator}}</td>
                                 <td style="vertical-align:middle;">
                                     <div class="div" style="height:70px; width:70px; overflow:hidden; border-radius:50%;padding:2px; border:1px solid gray;">
-                                        <img style="height:100%;width:100%;border-radius:50%;" src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
+                                        <img style="height:100%;width:100%;border-radius:50%;" src="{{asset('')}}{{$data->photo}}" alt="profile pic">
                                     </div>
+                                </td>
                                 <td style="vertical-align:middle;">
                                     <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a>
                                     {{-- <a href="{{$data->name}}" id="viewData" data-id="{{$data->id}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a> --}}
