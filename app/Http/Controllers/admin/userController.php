@@ -12,8 +12,7 @@ use Image;
 use Session;
 use Storage;
 use Hash;
-
-
+use Illuminate\Support\Facades\Auth;
 class userController extends Controller
 {
     public function __construct()
@@ -33,6 +32,7 @@ class userController extends Controller
             'name' => $_POST['name'],
             'email' => $_POST['email'],
             'role_serial' => $_POST['user_role'],
+            'creator'=>Auth::user()->name,
             'password' => Hash::make($_POST['password']),
             'slug' => $slug,
             'created_at' => Carbon::now()->toDateTimeString()

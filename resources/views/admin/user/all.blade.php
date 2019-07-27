@@ -45,9 +45,12 @@
                                 <td style="vertical-align:middle;">{{$data->email}}</td>
                                 <td style="vertical-align:middle;">{{$data->rolename->role_name}}</td>
                                 <td style="vertical-align:middle;">{{$data->creator}}</td>
-                                <td style="vertical-align:middle;"><img src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
                                 <td style="vertical-align:middle;">
-                                    <a href="#" title="view user"><i class="fa fa-plus"></i></a>
+                                    <div class="div" style="height:70px; width:70px; overflow:hidden; border-radius:50%;padding:2px; border:1px solid gray;">
+                                        <img style="height:100%;width:100%;border-radius:50%;" src="{{asset('')}}{{$data->photo}}" alt="profile pic"></td>
+                                    </div>
+                                <td style="vertical-align:middle;">
+                                    <a href="#" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
                                     <a href="#" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
@@ -150,6 +153,26 @@
         </div>
 
     </div>
+
+    <div class="modal fade" id="viwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 </div>
 
 @endsection

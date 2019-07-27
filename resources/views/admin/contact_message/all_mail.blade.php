@@ -63,7 +63,6 @@
                                                 <div class="inbox-center table-responsive">
                                                     <table class="table table-hover no-wrap">
                                                         <tbody>
-
                                                             @foreach ($all as $data)
                                                                 <tr class="unread">
                                                                     <td style="width:40px">
@@ -83,7 +82,6 @@
                                                                     <td class="text-right"> {{$data->created_at->format('M - D - Y | g:i:s A')}} </td>
                                                                 </tr>
                                                             @endforeach
-
                                                         </tbody>
                                                     </table>
                                                 </div>
