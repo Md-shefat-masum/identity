@@ -57,7 +57,7 @@ class userController extends Controller
         $user = user::where('slug',$slug)->firstOrFail();
         if($user){
             // return response()->json($user);
-            return view('admin.user.serach',compact('user'));
+            return view('admin.user.view',compact('user'));
         }else{
             return response()->json('error');
         }
