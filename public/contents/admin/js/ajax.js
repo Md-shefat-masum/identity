@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
     $('.view-modal').click(function() {
+        $('#pro-pic').modal({backdrop: 'static', keyboard: true});
         $('#role').html( $(this).data('role'));
         $('#role2').html( $(this).data('role'));
         // $('#photo').attr('src'," {{asset('')}}"+"{{"+$(this).data('photo')+"}}");
@@ -13,18 +14,17 @@ $(document).ready(function(){
             success: function(data) {
                 $('.view-modal').show();
                 // ... the other stuff
-                $('#photo').attr('src',"{{asset('')}}{{$data->photo}}");
+                // $('#photo').attr('src',"{{asset('')}}{{$data->photo}}");
                 $('#name').html( data.name );
                 $('#name2').html( data.name );
                 $('#email').html( data.email);
                 $('#creator').html( data.creator);
+                $('#pro-pic').html( '<img src="{{asset()}}{{'+data.photo+'}}">').load('<img src="{{asset()}}{{'+data.photo+'}}">');
             },
             error : function(data) {
                 alert(data.name);
             }
         });
     });
-
-
 
 });

@@ -198,7 +198,7 @@
                                 <td style="vertical-align:middle;">
                                     {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
                                     <a href="#" class="view-modal" id="viewData" data-id="{{route('user_viewm',$data->slug)}}" data-name="{{$data->name}}" data-photo="{{$data->photo}}" data-creator="{{$data->creator}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
-                                    <a href="#" class="view-modal" title="edit user information"><i class="fa fa-pencil"></i></a>
+                                    <a href="{{route('user_viewm',$data->slug)}}" data-toggle="modal" class="" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -313,7 +313,7 @@
             <div class="modal-body">
                     <div class="top">
                             <h1 id="name"></h1>
-                            <div class="profile-pic">
+                            <div class="profile-pic" id="pro-pic">
                                 <img style="" src="" id="photo" alt="user">
                             </div>
                         </div>
