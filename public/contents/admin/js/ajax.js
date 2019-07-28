@@ -1,12 +1,12 @@
 
 $(document).ready(function(){
+
+
     $('.view-modal').click(function(e) {
         e.preventDefault();
         $('#role').html( $(this).data('role'));
         $('#role2').html( $(this).data('role'));
-        // $('#photo').attr('src'," {{asset('')}}"+"{{"+$(this).data('photo')+"}}");
-        // console.log('{{asset("")}}'+'{{'+$(this).data('photo')+'}}');
-        // console.log($(this).data('id'));
+        $('#photo').attr('src',$(this).data('photo'));
         $.ajax({
             type: 'GET',
             url: $(this).data('id'),
@@ -17,9 +17,6 @@ $(document).ready(function(){
                 $('.loading').css('display', 'block');
             },
             success: function(data){
-                // $('#pro-pic').append( '<img src="{{asset()}}{{'+data.photo+'}}">');
-                // $('#photo').attr('src',"{{asset('')}}"+"{{"+data.photo+"}}");
-                $('#photo').attr('src',"https://avatars1.githubusercontent.com/u/28534134?s=460&v=4");
                 $('#name').html( data.name );
                 $('#name2').html( data.name );
                 $('#email').html( data.email);
