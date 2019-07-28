@@ -302,6 +302,8 @@
 
     </div>
     <img class="loading" style="display:none;position:absolute;top:30%;left:50%;translate: transform(-50%,-50%);z-index:9999;" src="{{asset('loader.gif')}}" alt="">
+
+    {{-- view modal --}}
     <div class="modal fade" id="viwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
           <div class="modal-content">
@@ -375,6 +377,82 @@
           </div>
         </div>
       </div>
+
+      {{-- update modal --}}
+      <div class="modal fade" id="viwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">User Information</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                        <div class="top">
+                                <h1 id="name"></h1>
+                                <div class="profile-pic" id="pro-pic">
+                                    <img style="" src="" id="photo" alt="user">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-5"></div>
+                                <div class="col-7 p-0">
+                                    <ul class="top-info">
+                                        {{-- <li><i class="ti-location-pin" id="role"></i></li> --}}
+                                        {{-- <li><i class="ti-user"></i>23 yr</li> --}}
+                                        <li id="role"><i class="ti-heart"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:13px;">
+                                <div class="col-12">
+                                    <ul style="display:flex; justify-content:center;">
+                                        <li>
+                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
+                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
+                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
+                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
+                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row" style="padding-top:7px;">
+                                <div class="col-12">
+                                    <table class="d-info" style="width:auto">
+                                        <tr>
+                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
+                                            <td style="width:10%;text-align:center;">:</td>
+                                            <td style="width:50%" id="name2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
+                                            <td style="width:10%;text-align:center;">:</td>
+                                            <td style="width:50%" id="email"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
+                                            <td style="width:10%;text-align:center;">:</td>
+                                            <td style="width:50%;color:red;" id="role2"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
+                                            <td style="width:10%;text-align:center;">:</td>
+                                            <td style="width:50%" id="creator"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                </div>
+              </div>
+            </div>
+          </div>
+
 </div>
 
 
