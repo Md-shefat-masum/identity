@@ -63,8 +63,8 @@ class userController extends Controller
         }
     }
 
-    public function viewm(Request $request){
-        $select=user::find($request->id);
+    public function viewm(Request $request,$slug){
+        $select=user::where('slug',$slug)->firstOrFail();
         return response()->json($select);
     }
 

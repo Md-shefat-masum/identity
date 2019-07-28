@@ -271,8 +271,9 @@
             <footer class="footer"> © 2019 admin panel. Developed by hungry coder. </footer>
         </div>
     </div>
-    <script src="{{asset('contents/admin/assets')}}/plugins/jquery/jquery.min.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/bootstrap/js/slim.min.js"></script>
+    <script src="{{asset('contents/admin/assets')}}/plugins/jquery/jquery.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.1.1.min.js"> --}}
     <script src="{{asset('contents/admin/assets')}}/plugins/bootstrap/js/popper.min.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/bootstrap/js/feather.min.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/bootstrap/js/eva.min.js"></script>
