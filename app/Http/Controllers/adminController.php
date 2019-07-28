@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 use session;
 use auth;
 use Carbon\Carbon;
+use App\Http\Middleware\PreventBackButton;
 
 class adminController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('preventBackButton');
+        // $this->middleware('auth');
     }
 
     public function view(){

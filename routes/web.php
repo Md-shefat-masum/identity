@@ -17,14 +17,17 @@ use App\Http\Controllers\adminController;
 // });
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'websiteController@index')->name('home');
 
 // website routes
-Route::get('/','websiteController@index')->name('website_index');
+Route::get('/','websiteController@index')->name('website_index')->middleware('preventBackButton');
 Route::post('/send-message','websiteController@message')->name('send_message');
 
 // admin routes
-Route::get('/admin','adminController@view')->name('admin_index');
+Route::group(['middleware' => ['preventBackButton','auth']], function () {
+    Route::get('/admin','adminController@view')->name('admin_index');
+});
+
 
 Route::group(['namespace' => 'admin'], function () {
     // user info route

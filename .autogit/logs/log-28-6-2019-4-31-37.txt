@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sun Jul 28 2019 04:31:37 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/Auth/LoginController.php
+* app/Http/Kernel.php
+* resources/lang/en/auth.php
+
+
+Created files:
+* app/Http/Middleware/PreventBackButton.php
+
+
+Deleted files:
+
+
+Renamed files:
