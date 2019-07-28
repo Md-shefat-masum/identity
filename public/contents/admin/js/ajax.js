@@ -11,18 +11,24 @@ $(document).ready(function(){
             type: 'GET',
             url: $(this).data('id'),
             dataType:'json',
-            contentType: false,
-            processData: false,
+            contentType: 'image/png',
+            processData: true,
             beforeSend: function(data){
-                $('#photo').attr('src','ajax_loader.gif');
+                $('.loading').css('display', 'block');
             },
             success: function(data){
-                // $('#pro-pic').html( '<img src="{{asset()}}{{'+data.photo+'}}">');
+                // $('#pro-pic').append( '<img src="{{asset()}}{{'+data.photo+'}}">');
                 $('#photo').attr('src',"{{asset('')}}"+"{{"+data.photo+"}}");
                 $('#name').html( data.name );
                 $('#name2').html( data.name );
                 $('#email').html( data.email);
                 $('#creator').html( data.creator);
+            },
+            complete: function(data){
+                $('.loading').css('display', 'none');
+                setInterval(function(){
+                    $("#pro-pic").load($(this).data('id'))
+                }, 2000);
             },
             error : function(data) {
                 alert(data.name);

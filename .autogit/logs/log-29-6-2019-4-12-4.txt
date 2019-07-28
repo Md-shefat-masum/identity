@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 29 2019 04:12:04 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* public/contents/admin/js/ajax.js
+
+
+Created files:
+* .autogit/logs/log-29-6-2019-3-41-59.txt
+
+
+Deleted files:
+
+
+Renamed files:

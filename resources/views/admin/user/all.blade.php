@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('contents')
+
 <style>
         .top{
             background: url('http://mdshefat.com/contents/admin/assets/images/header-back-ground.png');
@@ -300,7 +301,7 @@
         </div>
 
     </div>
-
+    <img class="loading" style="display:none;position:absolute;top:30%;left:50%;translate: transform(-50%,-50%);z-index:9999;" src="{{asset('loader.gif')}}" alt="">
     <div class="modal fade" id="viwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
           <div class="modal-content">
