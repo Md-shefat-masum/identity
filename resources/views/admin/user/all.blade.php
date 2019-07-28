@@ -1,5 +1,150 @@
 @extends('layouts.admin')
 @section('contents')
+<style>
+        .top{
+            background: url('http://mdshefat.com/contents/admin/assets/images/header-back-ground.png');
+            background-size:cover;
+            background-position:center center;
+            position:relative;
+            z-index:1;
+        }
+        .top::before{
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: '';
+            height: 100%;
+            width: 100%;
+            /* background: rgba(0,0,0,.5); */
+        }
+        .top h1{
+            text-align: center;
+            text-transform: uppercase;
+            padding: 20px 0px;
+            color: white;
+            position: relative;
+            z-index: 99;
+        }
+        .top img{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            border: 1px solid white;
+            position: relative;
+            z-index: 99;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        .card-body{
+                padding: 5px;
+            }
+            .top{
+                position: relative;
+                height: 165px;
+                background-size:cover;
+                background-position: bottom center;
+                background-repeat: no-repeat;
+            }
+            .top h1{
+                position: absolute;
+                top: 40%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                font-size: 20px;
+            }
+            .top img{
+                width: 100%;
+                height: 100%;
+            }
+            .top .profile-pic{
+                position: absolute;
+                bottom: -50px;
+                overflow: hidden;
+                height: 100px;
+                width: 100px;
+                left: 20%;
+                transform: translateX(-50%);
+            }
+            .top-info{
+                padding-left: 0px;
+            }
+            .top-info li{
+                list-style-type: none;
+                font-size: 14px;
+                width: 100%;
+            }
+            .top-info li i{
+                height: 10px;
+                width: 22px;
+                display: inline-block;
+            }
+            ul{
+                padding: 0;
+            }
+            ul li{
+                list-style: none;
+            }
+            .d-info td{
+                padding: 8px 0px;
+            }
+            .operation a{
+                margin: 0px 2px;
+            }
+
+        @media (min-width: 576px) and (max-width: 767.98px)
+        {
+            .top{
+                height: 225px;
+            }
+            table{
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991.98px) {
+            .top{
+                height: 230px;
+            }
+            .top .profile-pic{
+                height: 150px;
+                width: 150px;
+                bottom: -70px;
+            }
+            table{
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199.98px) {
+            .top{
+                height: 230px;
+            }
+            .top .profile-pic{
+                height: 200px;
+                width: 200px;
+                bottom: -80px;
+            }
+            table{
+                margin: 0 auto;
+            }
+        }
+        @media (min-width: 1200px) {
+            .top{
+                height: 300px;
+            }
+            .top .profile-pic{
+                height: 200px;
+                width: 200px;
+                bottom: -80px;
+            }
+            table{
+                margin: 0 auto;
+            }
+
+        }
+    </style>
 <div class="page-wrapper">
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
@@ -52,8 +197,8 @@
                                 </td>
                                 <td style="vertical-align:middle;">
                                     {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
-                                    <a href="#" id="viewData" data-id="{{$data->id}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
-                                    <a href="#" title="edit user information"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" class="view-modal" id="viewData" data-id="{{$data->id}}" data-name="{{$data->name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+                                    <a href="#" class="view-modal" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -160,13 +305,67 @@
         <div class="modal-dialog modal-dialog-scrollable" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalScrollableTitle">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalScrollableTitle">User Information</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              ...
+                    <div class="top">
+                            <h1>ABU EHSAN</h1>
+                            <div class="profile-pic">
+                                <img style="" src="http://mdshefat.com/uploads/blood-donner/ABU EHSANdonner205d0885a54fc1d_1560842440.jpg" alt="http://mdshefat.com/contents/website/images/team/masum.png">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-5"></div>
+                            <div class="col-7 p-0">
+                                <ul class="top-info">
+                                    <li><i class="ti-location-pin"></i>jurain, jatrabari</li>
+                                    <li><i class="ti-user"></i>23 yr</li>
+                                    <li><i class="ti-heart-broken"></i>blood donneted 9 months ago</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:13px;">
+                            <div class="col-12">
+                                <ul style="display:flex; justify-content:center;">
+                                    <li>
+                                        <a href="https://www.facebook.com/rupom.hasan.77/timeline?lst=100007517444767%3A100004105545216%3A1560842012" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
+                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
+                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
+                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
+                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:7px;">
+                            <div class="col-12">
+                                <table class="d-info" style="width:auto">
+                                    <tr>
+                                        <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
+                                        <td style="width:10%;text-align:center;">:</td>
+                                        <td style="width:50%" id="name"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
+                                        <td style="width:10%;text-align:center;">:</td>
+                                        <td style="width:50%" id="email"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
+                                        <td style="width:10%;text-align:center;">:</td>
+                                        <td style="width:50%;color:red;" id="role"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
+                                        <td style="width:10%;text-align:center;">:</td>
+                                        <td style="width:50%" id="creator"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -176,5 +375,6 @@
         </div>
       </div>
 </div>
+
 
 @endsection

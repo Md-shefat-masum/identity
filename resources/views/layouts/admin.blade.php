@@ -19,7 +19,7 @@
     <link href="{{asset('contents/admin')}}/css/colors/blue.css" id="theme" rel="stylesheet">
     <link href="{{asset('contents/admin')}}/css/own-style.css" id="theme" rel="stylesheet">
     <script src="{{asset('contents/admin')}}/js/sweetalert.min.js"></script>
-    <script src="{{asset('contents/admin')}}/js/ajax.js"></script>
+
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -293,6 +293,7 @@
     <script src="{{asset('contents/admin/assets')}}/plugins/html5-editor/bootstrap-wysihtml5.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/dropify/dist/js/dropify.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/validation.js"></script>
+    <script src="{{asset('contents/admin')}}/js/ajax.js"></script>
 
     <script>
         $(document).ready(function() {
