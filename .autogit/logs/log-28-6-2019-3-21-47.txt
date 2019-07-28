@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Sun Jul 28 2019 03:21:47 GMT-0600 (Central Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/admin/footerController.php
+* app/Http/Controllers/websiteController.php
+* resources/views/admin/footer/index.blade.php
+* resources/views/layouts/website.blade.php
+
+
+Created files:
+* .autogit/logs/log-28-6-2019-2-51-41.txt
+
+
+Deleted files:
+
+
+Renamed files:
