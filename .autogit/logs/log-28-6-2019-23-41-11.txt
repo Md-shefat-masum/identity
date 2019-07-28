@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Sun Jul 28 2019 23:41:11 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/adminController.php
+* app/Http/Kernel.php
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-28-6-2019-4-31-37.txt
+
+
+Deleted files:
+
+
+Renamed files:

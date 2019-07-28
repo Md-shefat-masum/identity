@@ -153,14 +153,14 @@
         <aside class="left-sidebar">
             <div class="scroll-sidebar">
                 <div class="user-profile">
-                    <div class="profile-img"> <img src="{{asset('contents/admin/assets')}}/images/users/profile.png" alt="user" />
+                    <div class="profile-img"> <img class="img-fluid" src="{{asset('')}}{{Auth::user()->photo}}" alt="user" />
                         <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
                     </div>
                     <div class="profile-text">
-                        <h5>{{ Auth::user()->name }}</h5>
+                        <h5>{{ Auth::user()->name }} </h5>
                         <a href="index.html#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
                         <a href="{{route('message_index')}}" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-                        <a href="{{ route('logout') }}" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+                        <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
