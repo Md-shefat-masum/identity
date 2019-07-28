@@ -74,8 +74,8 @@
 	<footer class="text-center">
 		<!-- Footer Text -->
 		<div class="container text-center item_top">
-			<img class="footer-logo" src="{{asset('contents/website')}}/images/logo.png" alt="footer logo"><br />
-			&copy; Copyright Md shefat 2019. All Rights Reserved.
+			<img class="footer-logo" src="{{asset('uploads')}}/{{$logo->name}}" alt="footer logo"><br />
+			{{$footer->title}}
 		</div>
 		<!-- End Footer Text -->
 	</footer>

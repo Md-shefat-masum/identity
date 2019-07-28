@@ -42,7 +42,7 @@
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>
-                                <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('footer_update',$select->slug)}}">
+                                <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="">
                                     @csrf
                                     <div class='form-group'>
                                         <div class='input-group'>
@@ -53,7 +53,7 @@
                                             <textarea name='title' value='' class='form-control text-lower' id='exampleInputuname' placeholder='input'>{{$select->title}}</textarea>
                                         </div>
                                     </div>
-                                    <button type='submit' formaction="" class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>update footer</button>
+                                    <button type='submit' formaction="{{route('footer_update',$select->slug)}}" class='btn btn-outline-success text-capitalize waves-effect waves-light m-r-10'>update footer</button>
                                 </form>
                             </div>
                         </div>

@@ -24,6 +24,7 @@ use App\clientsay;
 use App\partners;
 use App\process;
 use App\personalinfo;
+use App\footer;
 
 class websiteController extends Controller
 {
@@ -48,8 +49,9 @@ class websiteController extends Controller
         $partner = partners::get();
         $process = process::orderBy('serial','ASC')->get();
         $social = personalinfo::get();
+        $footer = footer::where('id',1)->firstOrFail();
 
-        return view('website.index',compact('social','process','partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
+        return view('website.index',compact('footer','social','process','partner','client','logo','nav','banner','aboutme','service','portcategory','portimage','skill','lskill','cv','myresume','resumecat'));
     }
 
     // sending message to admin

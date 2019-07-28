@@ -21,7 +21,7 @@ class footerController extends Controller
         return view('admin/footer/index',compact('select'));
     }
     public function update(Request $request,$slug){
-        $update = footer::where('id',$slug)->update([
+        $update = footer::where('slug',$slug)->update([
             'title'=>$_POST['title'],
             'updated_at' => Carbon::now()->toDateTimeString()
         ]);
