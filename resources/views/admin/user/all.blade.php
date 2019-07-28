@@ -51,8 +51,8 @@
                                     </div>
                                 </td>
                                 <td style="vertical-align:middle;">
-                                    <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a>
-                                    {{-- <a href="{{$data->name}}" id="viewData" data-id="{{$data->id}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a> --}}
+                                    {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
+                                    <a href="#" id="viewData" data-id="{{$data->id}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
                                     <a href="#" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
