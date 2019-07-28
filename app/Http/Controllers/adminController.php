@@ -7,6 +7,7 @@ use session;
 use auth;
 use Carbon\Carbon;
 use App\Http\Middleware\PreventBackButton;
+use App\frontlogo;
 
 class adminController extends Controller
 {

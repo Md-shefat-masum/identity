@@ -63,4 +63,9 @@ class userController extends Controller
         }
     }
 
+    public function viewm(Request $request){
+        $select=user::find($request->id);
+        return response()->json($select);
+    }
+
 }

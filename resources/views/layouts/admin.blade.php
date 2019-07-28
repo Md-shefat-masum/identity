@@ -30,15 +30,18 @@
     <div id="main-wrapper">
         <header class="topbar">
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                <div class="navbar-header" style="background:#1976d2; border-right:1px solid gray;">
+                    <a class="navbar-brand" href="{{route('admin_index')}}" >
                         <b>
-                            <img src="{{asset('contents/admin/assets')}}/images/logo-icon.png" alt="homepage" class="dark-logo" />
-                            <img src="{{asset('contents/admin/assets')}}/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                            @php
+                                $logo=App\frontlogo::where('id',1)->firstOrFail();
+                            @endphp
+                            <img src="{{asset('uploads')}}/{{$logo->name}}" alt="homepage" class="dark-logo" />
+                            {{-- <img src="{{asset('contents/admin/assets')}}/images/logo-light-icon.png" alt="homepage" class="light-logo" /> --}}
                         </b>
                         <span>
-                         <img src="{{asset('contents/admin/assets')}}/images/logo-text.png" alt="homepage" class="dark-logo" />
-                         <img src="{{asset('contents/admin/assets')}}/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                         {{-- <img src="{{asset('contents/admin/assets')}}/images/logo-text.png" alt="homepage" class="dark-logo" /> --}}
+                         {{-- <img src="{{asset('contents/admin/assets')}}/images/logo-light-text.png" class="light-logo" alt="homepage" /> --}}
                        </span>
                     </a>
                 </div>
@@ -121,12 +124,12 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-bd"></i></a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('contents/admin/assets')}}/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{asset('')}}{{ Auth::user()->photo }}" alt="user" class="profile-pic" /></a>
                             <div class="dropdown-menu dropdown-menu-right scale-up">
                                 <ul class="dropdown-user">
                                     <li>
                                         <div class="dw-user-box">
-                                            <div class="u-img"><img src="{{asset('contents/admin/assets')}}/images/users/1.jpg" alt="user"></div>
+                                            <div class="u-img"><img src="{{asset('')}}{{ Auth::user()->photo }}" alt="user"></div>
                                             <div class="u-text">
                                                 <h4>{{ Auth::user()->name }}</h4>
                                                 <p class="text-muted">{{ Auth::user()->email }}</p><a href="pages-profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
