@@ -197,7 +197,7 @@
                                 </td>
                                 <td style="vertical-align:middle;">
                                     {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
-                                    <a href="#" class="view-modal" id="viewData" data-id="{{$data->id}}" data-name="{{$data->name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+                                    <a href="#" class="view-modal" id="viewData" data-id="{{$data->id}}" data-name="{{$data->name}}" data-photo="{{$data->photo}}" data-creator="{{$data->creator}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
                                     <a href="#" class="view-modal" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
@@ -312,18 +312,18 @@
             </div>
             <div class="modal-body">
                     <div class="top">
-                            <h1>ABU EHSAN</h1>
+                            <h1 id="name"></h1>
                             <div class="profile-pic">
-                                <img style="" src="http://mdshefat.com/uploads/blood-donner/ABU EHSANdonner205d0885a54fc1d_1560842440.jpg" alt="http://mdshefat.com/contents/website/images/team/masum.png">
+                                <img style="" src="" id="photo" alt="user">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-5"></div>
                             <div class="col-7 p-0">
                                 <ul class="top-info">
-                                    <li><i class="ti-location-pin"></i>jurain, jatrabari</li>
-                                    <li><i class="ti-user"></i>23 yr</li>
-                                    <li><i class="ti-heart-broken"></i>blood donneted 9 months ago</li>
+                                    {{-- <li><i class="ti-location-pin" id="role"></i></li> --}}
+                                    {{-- <li><i class="ti-user"></i>23 yr</li> --}}
+                                    <li id="role"><i class="ti-heart"></i></li>
                                 </ul>
                             </div>
                         </div>
@@ -331,11 +331,11 @@
                             <div class="col-12">
                                 <ul style="display:flex; justify-content:center;">
                                     <li>
-                                        <a href="https://www.facebook.com/rupom.hasan.77/timeline?lst=100007517444767%3A100004105545216%3A1560842012" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
-                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
-                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
-                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
-                                        <a href="" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
+                                        <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
+                                        <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
+                                        <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
+                                        <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
+                                        <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
                                     </li>
                                 </ul>
                             </div>
@@ -346,7 +346,7 @@
                                     <tr>
                                         <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
                                         <td style="width:10%;text-align:center;">:</td>
-                                        <td style="width:50%" id="name"></td>
+                                        <td style="width:50%" id="name2"></td>
                                     </tr>
                                     <tr>
                                         <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
@@ -356,7 +356,7 @@
                                     <tr>
                                         <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
                                         <td style="width:10%;text-align:center;">:</td>
-                                        <td style="width:50%;color:red;" id="role"></td>
+                                        <td style="width:50%;color:red;" id="role2"></td>
                                     </tr>
                                     <tr>
                                         <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
@@ -369,7 +369,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
             </div>
           </div>
         </div>
