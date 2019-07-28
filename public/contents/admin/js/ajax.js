@@ -18,7 +18,8 @@ $(document).ready(function(){
             },
             success: function(data){
                 // $('#pro-pic').append( '<img src="{{asset()}}{{'+data.photo+'}}">');
-                $('#photo').attr('src',"{{asset('')}}"+"{{"+data.photo+"}}");
+                // $('#photo').attr('src',"{{asset('')}}"+"{{"+data.photo+"}}");
+                $('#photo').attr('src',"https://avatars1.githubusercontent.com/u/28534134?s=460&v=4");
                 $('#name').html( data.name );
                 $('#name2').html( data.name );
                 $('#email').html( data.email);
@@ -26,9 +27,6 @@ $(document).ready(function(){
             },
             complete: function(data){
                 $('.loading').css('display', 'none');
-                setInterval(function(){
-                    $("#pro-pic").load($(this).data('id'))
-                }, 2000);
             },
             error : function(data) {
                 alert(data.name);

@@ -136,9 +136,9 @@
                 height: 300px;
             }
             .top .profile-pic{
-                height: 200px;
-                width: 200px;
-                bottom: -80px;
+                height: 150px;
+                width: 150px;
+                bottom: -50px;
             }
             table{
                 margin: 0 auto;

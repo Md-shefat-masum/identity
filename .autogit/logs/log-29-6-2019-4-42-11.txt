@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 29 2019 04:42:11 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* public/contents/admin/js/ajax.js
+* resources/views/admin/user/all.blade.php
+
+
+Created files:
+* .autogit/logs/log-29-6-2019-4-12-4.txt
+* public/loader.gif
+
+
+Deleted files:
+
+
+Renamed files:
