@@ -199,7 +199,7 @@
                                 <td style="vertical-align:middle;">
                                     {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
                                     <a href="#" class="view-modal" id="viewData" data-id="{{route('user_viewm',$data->slug)}}" data-name="{{$data->name}}" data-photo="{{asset('')}}{{$data->photo}}" data-creator="{{$data->creator}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
-                                    <a href="#" id="update-modal" data-id="{{route('user_viewm',$data->slug)}}" data-name="{{$data->name}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->rolename->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" id="update-modal" data-id="{{route('user_update',$data->slug)}}" data-name="{{$data->name}}" data-roles="{{$data->role_serial}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->rolename->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -402,7 +402,7 @@
                         </div>
                         <div class="form-group m-t-40">
                             <div class="col-xs-12">
-                                <select style="color:gray;padding:5px;"  type="text" placeholder="role" class="form-control " name="role" value=""  autofocus>
+                                <select style="color:gray;padding:5px;"  type="text" placeholder="role" class="form-control" name="role" value=""  autofocus>
                                     <option value="" id="update_role"></option>
                                     @php $role=App\user_role::where('status',1)->get(); @endphp
                                     @foreach ($role as $item)

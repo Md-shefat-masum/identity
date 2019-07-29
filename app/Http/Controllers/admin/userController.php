@@ -68,4 +68,17 @@ class userController extends Controller
         return response()->json($select);
     }
 
+    public function update(Request $request,$slug){
+        $update=user::where('slug',$slug)->update([
+            'name'=>$_POST['name'],
+            'email'=>$_POST['email'],
+            'role'=>$_POST['role'],
+            'updated_at' => Carbon::now()->toDateTimeString()
+        ]);
+        if($update){
+            // Session::flash('success','value');
+            return response()->json('success');
+        }
+    }
+
 }
