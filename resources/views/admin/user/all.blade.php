@@ -206,8 +206,17 @@
                                     <a href="#" class="view-modal" id="viewData"
                                     data-id="{{route('user_viewm',$data->slug)}}"
                                     data-name="{{$data->name}}"
-                                    data-photo="{{asset('')}}{{$data->photo}}" data-creator="{{$data->creator}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
-                                    <a href="#" id="update-modal" data-id="{{route('user_update',$data->slug)}}" data-name="{{$data->name}}" data-roles="{{$data->role_serial}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->rolename->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
+                                    data-photo="{{asset('')}}{{$data->photo}}"
+                                    data-creator="{{$data->creator}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+
+                                    <a href="#" id="update-modal"
+                                    data-id="{{route('user_update',$data->slug)}}"
+                                    data-name="{{$data->name}}"
+                                    data-roles="{{$data->role_serial}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -398,6 +407,7 @@
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal form-material" id="loginform" method="POST" action="">
+                        @csrf
                         <div class="form-group m-t-40">
                             <div class="col-xs-12">
                                 <input style="color:gray;padding:5px;" id="update_name" type="name" placeholder="name" class="form-control " name="name" value=""  autofocus>
@@ -423,7 +433,7 @@
                 </div>
                 <div class="modal-footer">
                     {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-                    <button type="submit" class="btn btn-outline-primary">Update Information</button>
+                    <button id="submit_btn" class="btn btn-outline-primary">Update Information</button>
                 </div>
             </div>
         </div>

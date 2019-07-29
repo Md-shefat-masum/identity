@@ -39,30 +39,9 @@ $(document).ready(function(){
         $('#update_name').attr('value', $(this).data('name'));
         $('#update_email').attr('value', $(this).data('email'));
         $('#loginform').attr('action', $(this).data('id'));
-        console.log($(this).data('email'));
-        console.log($(this).data('role'));
-        var formdata = new FormData($(this)[0]);
-        $.ajax({
-            type: 'POST',
-            url: '/admin/update-user-modal',
-            dataType:'json',
-            contentType: false,
-            processData: true,
-            data:formdata,
-            beforeSend: function(){
-                $('.loading').css('display', 'block');
-            },
-            success: function(data){
-                if(data == 'success'){
-                    swal({ title: "Success!", text: "Banner update Success.", timer:5000, icon: "success",});
-                }
-            },
-            complete: function(){
-                $('.loading').css('display', 'none');
-            },
-            error : function() {
-                alert('error');
-            }
+        console.log($(this).data('id'));
+        $("#submit_btn").click(function(){
+            $("#loginform").submit(); // Submit the form
         });
     });
 

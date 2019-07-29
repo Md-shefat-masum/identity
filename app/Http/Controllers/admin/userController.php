@@ -68,16 +68,16 @@ class userController extends Controller
         return response()->json($select);
     }
 
-    public function update(Request $request){
-        $update=user::where('slug',$request->slug)->update([
-            'name'=>$request->name
+    public function update(Request $request,$slug){
+        $update=user::where('slug',$slug)->update([
+            'name'=>$_POST['name'],
+            'email' => $_POST['email'],
+            'role_serial' => $_POST['role']
         ]);
 
         if($update){
-            return response()->json('success');
-        }
-        else{
-            return response()->json('error');
+            Session::flash('success','value');
+            return redirect()->route('user_index');
         }
     }
 
