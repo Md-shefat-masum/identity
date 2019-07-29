@@ -199,7 +199,7 @@
                                 <td style="vertical-align:middle;">
                                     {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
                                     <a href="#" class="view-modal" id="viewData" data-id="{{route('user_viewm',$data->slug)}}" data-name="{{$data->name}}" data-photo="{{asset('')}}{{$data->photo}}" data-creator="{{$data->creator}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
-                                    <a href="{{route('user_viewm',$data->slug)}}" data-toggle="modal" class="" title="edit user information"><i class="fa fa-pencil"></i></a>
+                                    <a href="#" id="update-modal" data-id="{{route('user_viewm',$data->slug)}}" data-name="{{$data->name}}" data-role="{{$data->rolename->role_name}}" data-email="{{$data->rolename->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
                                     <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -376,82 +376,50 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
 
       {{-- update modal --}}
-      <div class="modal fade" id="viwModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable" role="document">
-              <div class="modal-content">
+    <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalScrollableTitle">User Information</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title" id="exampleModalScrollableTitle">Update Information</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                        <div class="top">
-                                <h1 id="name"></h1>
-                                <div class="profile-pic" id="pro-pic">
-                                    <img style="" src="" id="photo" alt="user">
-                                </div>
+                    <form class="form-horizontal form-material" id="loginform" method="POST" action="">
+                        <div class="form-group m-t-40">
+                            <div class="col-xs-12">
+                                <input style="color:gray;padding:5px;" id="update_name" type="name" placeholder="name" class="form-control " name="name" value=""  autofocus>
                             </div>
-                            <div class="row">
-                                <div class="col-5"></div>
-                                <div class="col-7 p-0">
-                                    <ul class="top-info">
-                                        {{-- <li><i class="ti-location-pin" id="role"></i></li> --}}
-                                        {{-- <li><i class="ti-user"></i>23 yr</li> --}}
-                                        <li id="role"><i class="ti-heart"></i></li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="form-group m-t-40">
+                            <div class="col-xs-12">
+                                <input style="color:gray;padding:5px;" id="update_email" type="email" placeholder="email" class="form-control " name="email" value=""  autofocus>
                             </div>
-                            <div class="row" style="padding-top:13px;">
-                                <div class="col-12">
-                                    <ul style="display:flex; justify-content:center;">
-                                        <li>
-                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
-                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
-                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
-                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
-                                            <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                        </div>
+                        <div class="form-group m-t-40">
+                            <div class="col-xs-12">
+                                <select style="color:gray;padding:5px;"  type="text" placeholder="role" class="form-control " name="role" value=""  autofocus>
+                                    <option value="" id="update_role"></option>
+                                    @php $role=App\user_role::where('status',1)->get(); @endphp
+                                    @foreach ($role as $item)
+                                        <option value="{{$item->role_serial}}">{{$item->role_name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <div class="row" style="padding-top:7px;">
-                                <div class="col-12">
-                                    <table class="d-info" style="width:auto">
-                                        <tr>
-                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
-                                            <td style="width:10%;text-align:center;">:</td>
-                                            <td style="width:50%" id="name2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
-                                            <td style="width:10%;text-align:center;">:</td>
-                                            <td style="width:50%" id="email"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
-                                            <td style="width:10%;text-align:center;">:</td>
-                                            <td style="width:50%;color:red;" id="role2"></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
-                                            <td style="width:10%;text-align:center;">:</td>
-                                            <td style="width:50%" id="creator"></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                    {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
+                    <button type="submit" class="btn btn-outline-primary">Update Information</button>
                 </div>
-              </div>
             </div>
-          </div>
+        </div>
+    </div>
 
 </div>
 
