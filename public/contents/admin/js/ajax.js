@@ -46,19 +46,17 @@ $(document).ready(function(){
             type: 'post',
             url: $(this).data('id'),
             dataType:'JSON',
+            data: formdata,
             contentType: false,
             processData: false,
             beforeSend: function(data){
                 $('.loading').css('display', 'block');
-                window.history.back();
             },
             success: function(data){
-                alert(data.name);
-                window.history.back();
+                alert('adjflasdj');
             },
             complete: function(data){
                 $('.loading').css('display', 'none');
-                window.history.back();
             }
         });
 
