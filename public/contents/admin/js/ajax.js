@@ -40,6 +40,28 @@ $(document).ready(function(){
         $("#submit_btn").click(function(){
             $("#loginform").submit(); // Submit the form
         });
+        var formdata = new FormData($(this)[0]);
+        $.ajax({
+            type: 'post',
+            url: $(this).data('id'),
+            dataType:'JSON',
+            contentType: false,
+            processData: false,
+            beforeSend: function(data){
+                $('.loading').css('display', 'block');
+            },
+            success: function(data){
+                if(data == 'success'){
+                    setInterval(function(){
+                        $("#tbody").load(' #tbody')
+                    },1000);
+                }
+            },
+            complete: function(data){
+                $('.loading').css('display', 'none');
+            }
+        });
+
     });
 
 });
