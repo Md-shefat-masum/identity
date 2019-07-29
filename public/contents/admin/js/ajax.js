@@ -24,9 +24,6 @@ $(document).ready(function(){
             },
             complete: function(data){
                 $('.loading').css('display', 'none');
-            },
-            error : function(data) {
-                alert(data.name);
             }
         });
     });
