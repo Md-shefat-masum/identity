@@ -37,9 +37,9 @@ $(document).ready(function(){
         $('#update_email').attr('value', $(this).data('email'));
         $('#loginform').attr('action', $(this).data('id'));
         console.log($(this).data('id'));
-        $("#submit_btn").click(function(){
-            $("#loginform").submit(); // Submit the form
-        });
+        // $("#submit_btn").click(function(){
+        //     $("#loginform").submit(); // Submit the form
+        // });
         var formdata = new FormData($(this)[0]);
         $.ajax({
             type: 'post',
@@ -51,11 +51,11 @@ $(document).ready(function(){
                 $('.loading').css('display', 'block');
             },
             success: function(data){
-                if(data == 'success'){
-                    setInterval(function(){
-                        $("#tbody").load(' #tbody')
-                    },1000);
-                }
+                // if(data == 'success'){
+                //     setInterval(function(){
+                //         $("#tbody").load(' #tbody')
+                //     },1000);
+                // }
             },
             complete: function(data){
                 $('.loading').css('display', 'none');
