@@ -433,7 +433,7 @@
                 </div>
                 <div class="modal-footer">
                     {{-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> --}}
-                    <button id="submit_btn" class="btn btn-outline-primary">Update Information</button>
+                    <button type="submit" id="submit_btn" class="btn btn-outline-primary">Update Information</button>
                 </div>
             </div>
         </div>

@@ -36,10 +36,11 @@ $(document).ready(function(){
         $('#update_name').attr('value', $(this).data('name'));
         $('#update_email').attr('value', $(this).data('email'));
         $('#loginform').attr('action', $(this).data('id'));
-        console.log($(this).data('id'));
-        // $("#submit_btn").click(function(){
-        //     $("#loginform").submit(); // Submit the form
-        // });
+
+        $("#submit_btn").click(function(){
+            $("#loginform").submit(); // Submit the form
+            // window.history.back();
+        });
         var formdata = new FormData($(this)[0]);
         $.ajax({
             type: 'post',
@@ -49,16 +50,15 @@ $(document).ready(function(){
             processData: false,
             beforeSend: function(data){
                 $('.loading').css('display', 'block');
+                window.history.back();
             },
             success: function(data){
-                // if(data == 'success'){
-                //     setInterval(function(){
-                //         $("#tbody").load(' #tbody')
-                //     },1000);
-                // }
+                alert(data.name);
+                window.history.back();
             },
             complete: function(data){
                 $('.loading').css('display', 'none');
+                window.history.back();
             }
         });
 

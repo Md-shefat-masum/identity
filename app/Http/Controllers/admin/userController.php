@@ -78,7 +78,7 @@ class userController extends Controller
         if($update){
             // Session::flash('success','value');
             // return redirect()->route('user_index');
-            return response()->json('success');
+            return response()->json($update);
         }
     }
 
