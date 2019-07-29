@@ -39,15 +39,17 @@ $(document).ready(function(){
         $('#update_name').attr('value', $(this).data('name'));
         $('#update_email').attr('value', $(this).data('email'));
         $('#loginform').attr('action', $(this).data('id'));
-        console.log($(this).data('id'));
+        console.log($(this).data('email'));
         console.log($(this).data('role'));
+        var formdata = new FormData($(this)[0]);
         $.ajax({
             type: 'POST',
-            url: $(this).data('id'),
+            url: '/admin/update-user-modal',
             dataType:'json',
-            // contentType: 'image/png',
-            // processData: true,
-            beforeSend: function(data){
+            contentType: false,
+            processData: true,
+            data:formdata,
+            beforeSend: function(){
                 $('.loading').css('display', 'block');
             },
             success: function(data){
@@ -55,11 +57,11 @@ $(document).ready(function(){
                     swal({ title: "Success!", text: "Banner update Success.", timer:5000, icon: "success",});
                 }
             },
-            complete: function(data){
+            complete: function(){
                 $('.loading').css('display', 'none');
             },
-            error : function(data) {
-                // alert(data.name);
+            error : function() {
+                alert('error');
             }
         });
     });
