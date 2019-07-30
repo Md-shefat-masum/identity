@@ -22,7 +22,7 @@ class userController extends Controller
 
     public function index()
     {
-        $all=user::where('status',1)->get();
+        $all=user::where('status',1)->orderBy('role_serial','ASC')->get();
         $deactive=user::where('status',0)->get();
         return view('admin.user.all',compact('all','deactive'));
     }
@@ -175,6 +175,7 @@ class userController extends Controller
     }
 
     public function user_profile(Request $request,$slug){
-        return view('admin.setting.user_profile');
+        $select = user::where('slug',$slug)->firstOrFail();
+        return view('admin.setting.user_profile',compact('select'));
     }
 }

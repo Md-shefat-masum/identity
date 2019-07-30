@@ -36,7 +36,7 @@
                 <div class='row'>
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img img-responsive" src="{{asset('contents/admin')}}/assets/images/big/img1.jpg" alt="Card image">
+                            <img class="card-img img-responsive" src="{{asset('contents/admin')}}/assets/images/big/img2.jpg" alt="Card image">
                             <div class="card-img-overlay card-inverse social-profile-first">
                                 <img src="{{asset('')}}{{Auth::user()->photo}}" class="img-circle" width="100" />
                                 <h4 class="card-title m-t-10">{{Auth::user()->name}}</h4>
@@ -72,6 +72,7 @@
                             </div>
                         </div>
                     </div>
+                    {{-- update part --}}
                     <div class='col-md-6'>
                         <div class='card'>
                             <div class='card-body'>

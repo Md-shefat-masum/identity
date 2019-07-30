@@ -38,22 +38,22 @@
                     <!-- Column -->
                     <div class="col-md-6 m-auto">
                         <div class="card">
-                            <img class="card-img img-responsive" src="{{asset('contents/admin')}}/assets/images/big/img1.jpg" alt="Card image">
+                            <img class="card-img img-responsive" src="{{asset('contents/admin')}}/assets/images/big/img2.jpg" alt="Card image">
                             <div class="card-img-overlay card-inverse social-profile-first">
-                                <img src="{{asset('')}}{{Auth::user()->photo}}" class="img-circle" width="150" />
-                                <h4 class="card-title m-t-10">{{Auth::user()->name}}</h4>
+                                <img src="{{asset('')}}{{$select->photo}}" class="img-circle" width="150" />
+                                <h4 class="card-title m-t-10">{{$select->name}}</h4>
                                 <h6 class="card-subtitle">Security Expert</h6>
                             </div>
                             <div class="card-body text-center overflow-hidden">
                                 <div class="row">
                                     <div class="col">
-                                        <h3 class="m-b-0 text-uppercase">{{Auth::user()->rolename->role_name}}</h3>
+                                        <h3 class="m-b-0 text-uppercase">{{$select->rolename->role_name}}</h3>
                                     </div>
                                 </div>
                             </div>
                             <div> <hr> </div>
                             <div class="card-body"> <small class="text-muted">Email address </small>
-                                <h6>{{Auth::user()->email}}</h6>
+                                <h6>{{$select->email}}</h6>
                                 @php
                                     $select=App\aboutme::where('id',1)->firstOrFail();
                                     @endphp
