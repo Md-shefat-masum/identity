@@ -2,9 +2,6 @@
     background: #dee2e6;
     border-radius: 5px;
 }
-.all-user table{
-
-}
 .all-user table thead{
     background: rgb(23, 92, 160);;
     color: #fbfbfb;
@@ -30,10 +27,9 @@
 .all-user table tbody tr:hover a{
     color: #ff7e00;
 }
-.all-user table tbody tr td{}
 .all-user table tbody tr td a{
     display: inline-block;
-    float: left;
+    /* float: left; */
     padding: 0 5px;
 }
 .all-user table tbody tr td a i{
