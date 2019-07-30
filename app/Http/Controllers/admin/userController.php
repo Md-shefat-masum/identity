@@ -127,6 +127,6 @@ class userController extends Controller
     }
 
     public function user_profile(Request $request){
-        return view('admin.setting.index');
+        return view('admin.setting.user_profile');
     }
 }

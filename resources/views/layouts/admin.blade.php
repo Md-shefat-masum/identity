@@ -136,7 +136,7 @@
                                         </div>
                                     </li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="index.html#"><i class="ti-user"></i> My Profile</a></li>
+                                    <li><a href="{{route('user_profile',Auth::user()->slug)}}"><i class="ti-user"></i> My Profile</a></li>
                                     {{-- <li><a href="index.html#"><i class="ti-wallet"></i> My Balance</a></li> --}}
                                     <li><a href="{{route('message_index')}}"><i class="ti-email"></i> Inbox</a></li>
                                     <li role="separator" class="divider"></li>
@@ -168,7 +168,7 @@
                             @csrf
                         </form>
                         <div class="dropdown-menu animated flipInY">
-                            <a href="index.html#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
+                            <a href="{{route('user_profile',Auth::user()->slug)}}" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <a href="{{route('message_index')}}" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
                             <div class="dropdown-divider"></div>
                             <a href="{{route('user_settings',Auth::user()->slug)}}" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
