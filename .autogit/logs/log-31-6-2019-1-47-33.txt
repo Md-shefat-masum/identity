@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Wed Jul 31 2019 01:47:33 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/admin/index.blade.php
+* resources/views/layouts/admin.blade.php
+
+
+Created files:
+* .autogit/logs/log-31-6-2019-1-17-26.txt
+
+
+Deleted files:
+
+
+Renamed files:
