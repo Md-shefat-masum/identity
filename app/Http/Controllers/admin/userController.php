@@ -123,16 +123,21 @@ class userController extends Controller
 
     // user settings
     public function user_setting(Request $request,$slug){
-        $select=user::where('slug',$slug)->firstOrFail();
-        return view('admin.setting.index',compact('select'));
+        $view=user::where('slug',$slug)->firstOrFail();
+        return view('admin.setting.index',compact('view'));
     }
 
     public function user_setting_change(Request $request,$slug){
         $update=user::where('slug',$slug)->firstOrFail();
         $password = $_POST['password'];
         // dd($password);
+
         if (!Hash::check($password, $update->password)) {
-            return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
+            $request->validate([
+                // 'password' => 'required|string|min:100|confirmed'
+                'password' => 'required|string|'
+            ]);
+            // return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
          }
         if($update){
             return redirect()->route('user_settings',$slug);
