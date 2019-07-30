@@ -6,8 +6,8 @@
 
 }
 .all-user table thead{
-    background: rgb(115, 51, 51);
-    color: #ff7e00;
+    background: rgb(23, 92, 160);;
+    color: #fbfbfb;
 }
 .all-user table thead tr th{
     border: 1px solid rgba(0, 0, 0,.2);

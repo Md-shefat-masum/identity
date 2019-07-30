@@ -209,7 +209,8 @@
                                     data-photo="{{asset('')}}{{$data->photo}}"
                                     data-creator="{{$data->creator}}"
                                     data-role="{{$data->rolename->role_name}}"
-                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal"
+                                    title="view user"><i class="fa fa-vcard-o"></i></a>
 
                                     <a href="#" id="update-modal"
                                     data-id="{{route('user_update',$data->slug)}}"
@@ -219,12 +220,14 @@
                                     data-email="{{$data->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
 
                                     <a href="#" class="delete-modal" id="deleteData"
+                                    data-btn="Deactivate user"
                                     data-id="{{route('user_soft_delete',$data->slug)}}"
                                     data-name="{{$data->name}}"
                                     data-photo="{{asset('')}}{{$data->photo}}"
                                     data-creator="{{$data->creator}}"
                                     data-role="{{$data->rolename->role_name}}"
-                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#deleteModal" title="delete user information"><i class="fa fa-trash"></i></a>
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#deleteModal"
+                                    title="delete user information"><i class="fa fa-power-off"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -595,8 +598,7 @@
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <a href="" id='deletelink2' class="btn btn-primary">Restore User</a>
-                  <a href="" id='deletelink' class="btn btn-primary">Delete User 2</a>
+                  <a href="" id='deletelink' class="btn btn-primary">Delete User</a>
                 </div>
               </div>
             </div>
@@ -647,7 +649,8 @@
                                     data-photo="{{asset('')}}{{$data->photo}}"
                                     data-creator="{{$data->creator}}"
                                     data-role="{{$data->rolename->role_name}}"
-                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+                                    data-email="{{$data->email}}" data-toggle="modal"
+                                    data-target="#viwModal" title="view user"><i class="fa fa-vcard-o"></i></a>
 
                                     <a href="#" id="update-modal"
                                     data-id="{{route('user_update',$data->slug)}}"
@@ -658,12 +661,13 @@
 
                                     <a href="#" class="delete-modal" id="deleteData"
                                     data-id="{{route('user_hard_delete',$data->slug)}}"
-                                    data-id2="{{route('user_restore',$data->slug)}}"
+                                    data-btn="Delete User Permanently"
                                     data-name="{{$data->name}}"
                                     data-photo="{{asset('')}}{{$data->photo}}"
                                     data-creator="{{$data->creator}}"
                                     data-role="{{$data->rolename->role_name}}"
                                     data-email="{{$data->email}}" data-toggle="modal" data-target="#deleteModal" title="delete user information"><i class="fa fa-trash"></i></a>
+                                    <a href="{{route('user_restore',$data->slug)}}"><i class="fa fa-spin fa-refresh"></i></a>
                                 </td>
                             </tr>
                             @endforeach

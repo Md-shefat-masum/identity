@@ -75,7 +75,7 @@ $(document).ready(function(){
         $('#name4').html( $(this).data('name'));
         $('#email2').html( $(this).data('email'));
         $('#creator2').html( $(this).data('creator'));
-        $('#deletelink2').attr('href', $(this).data('id2'));
+        $('#deletelink').html($(this).data('btn'));
         $('#deletelink').attr('href', $(this).data('id'));
     });
 
