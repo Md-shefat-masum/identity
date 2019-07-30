@@ -41,6 +41,7 @@ Route::group(['namespace' => 'admin'], function () {
     Route::get('/admin/update-user-hard-delete/{slug}','userController@harddelete')->name('user_hard_delete');
     // user settings
     Route::get('/admin/user/settings/{slug}','userController@user_setting')->name('user_settings');
+    Route::get('/admin/user/profile/{slug}','userController@user_profile')->name('user_profile');
     // user role controll route
     Route::get('/admin/user-role','userRoleController@index')->name('user_role_index');
     Route::post('/admin/user-role-add','userRoleController@add')->name('user_role_add');
