@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Tue Jul 30 2019 23:47:11 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* app/Http/Controllers/admin/userController.php
+* resources/views/admin/setting/index.blade.php
+
+
+Created files:
+* .autogit/logs/log-30-6-2019-23-17-1.txt
+* public/uploads/users/0Jjem01F6Qd9MKjs8tkbGvPvYEL5XWSzxh8k5Ddr.jpeg
+
+
+Deleted files:
+* public/uploads/users/7JwZwcGjuQw1B0EAXkSbC1Yie8y3GhvnaQ2PniC2.jpeg
+
+
+Renamed files:
