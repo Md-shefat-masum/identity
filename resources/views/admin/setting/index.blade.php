@@ -37,15 +37,14 @@
                     <div class='col-md-6 m-auto'>
                         <div class='card'>
                             <div class='card-body'>
-                                <form class='form p-t-20 form-material' enctype='multipart/form-data' method='POST' action="">
+                                <form class='form p-t-20 form-material' enctype='multipart/form-data' method='POST' action="{{route('user_setting_change',$select->slug)}}">
                                     @csrf
-
                                     <div class='form-group'>
                                         <div class='input-group'>
                                             <label for='name'>Name</label>
                                         </div>
                                         <div class='input-group'>
-                                            <input name='name' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='name'>
+                                            <input name='name' value='{{$select->name}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='name'>
                                         </div>
                                     </div>
 
@@ -60,10 +59,19 @@
 
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>Password</label>
+                                            <label for='name'>Old Password</label>
                                         </div>
                                         <div class='input-group'>
-                                            <input name='password' value='{{Auth::user()->password}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
+                                            <input name='password' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
+                                        </div>
+                                    </div>
+
+                                    <div class='form-group'>
+                                        <div class='input-group'>
+                                            <label for='name'>New Password</label>
+                                        </div>
+                                        <div class='input-group'>
+                                            <input name='password' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
                                         </div>
                                     </div>
 

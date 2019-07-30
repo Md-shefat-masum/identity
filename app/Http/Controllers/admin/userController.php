@@ -122,11 +122,16 @@ class userController extends Controller
     }
 
     // user settings
-    public function user_setting(Request $request){
-        return view('admin.setting.index');
+    public function user_setting(Request $request,$slug){
+        $select=user::where('slug',$slug)->firstOrFail();
+        return view('admin.setting.index',compact('select'));
     }
 
-    public function user_profile(Request $request){
+    public function user_setting_change(Request $request,$slug){
+        return redirect()->route('user_setting_change');
+    }
+
+    public function user_profile(Request $request,$slug){
         return view('admin.setting.user_profile');
     }
 }
