@@ -36,6 +36,7 @@ Route::group(['namespace' => 'admin'], function () {
     // Route::get('/admin/view-user/{slug}','userController@view')->name('user_view');
     Route::get('/admin/view-user-modal/{slug}','userController@viewm')->name('user_viewm');
     Route::post('/admin/update-user-modal/{slug}','userController@update')->name('user_update');
+    Route::post('/admin/update-user-soft-delte/{slug}','userController@softdelete')->name('user_soft_delete');
     // user role controll route
     Route::get('/admin/user-role','userRoleController@index')->name('user_role_index');
     Route::post('/admin/user-role-add','userRoleController@add')->name('user_role_add');

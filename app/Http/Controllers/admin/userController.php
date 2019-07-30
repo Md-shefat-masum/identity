@@ -74,11 +74,30 @@ class userController extends Controller
             'email' => $_POST['email'],
             'role_serial' => $_POST['role']
         ]);
+        if($request->hasFile('photo')){
+            $delete=user::where('slug',$slug)->select('photo')->firstOrFail();
+            Storage::disk('public')->delete($delete->photo);
+            $file=$request->file('photo');
+            $path=Storage::putFile('uploads/users',$file);
+            user::where('slug',$slug)->update([
+                'photo'=>$path
+            ]);
+        }
 
         if($update){
             // Session::flash('success','value');
-            // return redirect()->route('user_index');
-            return response()->json($update);
+            return redirect()->route('user_index');
+            // return response()->json($update);
+        }
+    }
+
+    public function softdelete(Request $request,$slug){
+        $softdelete=user::where('slug',$slug)->update([
+            'status' => 0
+        ]);
+
+        if($softdelete){
+            return redirect()->route('user_index');
         }
     }
 

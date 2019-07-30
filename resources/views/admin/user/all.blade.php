@@ -406,7 +406,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal form-material" id="loginform" method="POST" action="">
+                    <form class="form-horizontal form-material" enctype='multipart/form-data' id="loginform" method="POST" action="">
                         @csrf
                         <div class="form-group m-t-40">
                             <div class="col-xs-12">
@@ -427,6 +427,11 @@
                                         <option value="{{$item->role_serial}}">{{$item->role_name}}</option>
                                     @endforeach
                                 </select>
+                            </div>
+                        </div>
+                        <div class="form-group m-t-40">
+                            <div class="col-xs-12">
+                                <input style="color:gray;padding:5px;" type="file" name='photo' class="from-control"  autofocus>
                             </div>
                         </div>
                     </form>

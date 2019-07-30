@@ -7,6 +7,10 @@ $(document).ready(function(){
         $('#role').html( $(this).data('role'));
         $('#role2').html( $(this).data('role'));
         $('#photo').attr('src',$(this).data('photo'));
+        $('#name').html( $(this).data('name') );
+        $('#name2').html( $(this).data('nae'));
+        $('#email').html( $(this).data('email'));
+        $('#creator').html( $(this).data('creator'));
         $.ajax({
             type: 'GET',
             url: $(this).data('id'),
@@ -59,7 +63,6 @@ $(document).ready(function(){
                 $('.loading').css('display', 'none');
             }
         });
-
     });
 
 });
