@@ -217,7 +217,14 @@
                                     data-roles="{{$data->role_serial}}"
                                     data-role="{{$data->rolename->role_name}}"
                                     data-email="{{$data->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
-                                    <a href="#" title="delete user information"><i class="fa fa-trash"></i></a>
+
+                                    <a href="#" class="delete-modal" id="deleteData"
+                                    data-id="{{route('user_soft_delete',$data->slug)}}"
+                                    data-name="{{$data->name}}"
+                                    data-photo="{{asset('')}}{{$data->photo}}"
+                                    data-creator="{{$data->creator}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#deleteModal" title="delete user information"><i class="fa fa-trash"></i></a>
                                 </td>
                             </tr>
                             @endforeach
@@ -316,8 +323,8 @@
                 </div>
             </div>
         </div>
-
     </div>
+
     <img class="loading" style="display:none;position:absolute;top:30%;left:50%;translate: transform(-50%,-50%);z-index:9999;" src="{{asset('loader.gif')}}" alt="">
 
     {{-- view modal --}}
@@ -444,6 +451,245 @@
         </div>
     </div>
 
+    {{-- delete modal --}}
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">User Information</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="top">
+                    <h1 id="name3"></h1>
+                    <div class="profile-pic" id="pro-pic">
+                        <img style="" src="" id="photo2" alt="user">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-5"></div>
+                    <div class="col-7 p-0">
+                        <ul class="top-info">
+                            {{-- <li><i class="ti-location-pin" id="role"></i></li> --}}
+                            {{-- <li><i class="ti-user"></i>23 yr</li> --}}
+                            <li id="role3"><i class="ti-heart"></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:13px;">
+                    <div class="col-12">
+                        <ul style="display:flex; justify-content:center;">
+                            <li>
+                                <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
+                                <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
+                                <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
+                                <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
+                                <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row" style="padding-top:7px;">
+                    <div class="col-12">
+                        <table class="d-info" style="width:auto">
+                            <tr>
+                                <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
+                                <td style="width:10%;text-align:center;">:</td>
+                                <td style="width:50%" id="name4"></td>
+                            </tr>
+                            <tr>
+                                <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
+                                <td style="width:10%;text-align:center;">:</td>
+                                <td style="width:50%" id="email2"></td>
+                            </tr>
+                            <tr>
+                                <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
+                                <td style="width:10%;text-align:center;">:</td>
+                                <td style="width:50%;color:red;" id="role4"></td>
+                            </tr>
+                            <tr>
+                                <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
+                                <td style="width:10%;text-align:center;">:</td>
+                                <td style="width:50%" id="creator2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a href="" id='deletelink' class="btn btn-primary">Delete User</a>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    {{-- hard delete modal --}}
+    <div class="modal fade" id="harddeleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">User Information</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="top">
+                        <h1 id="name3"></h1>
+                        <div class="profile-pic" id="pro-pic">
+                            <img style="" src="" id="photo2" alt="user">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5"></div>
+                        <div class="col-7 p-0">
+                            <ul class="top-info">
+                                {{-- <li><i class="ti-location-pin" id="role"></i></li> --}}
+                                {{-- <li><i class="ti-user"></i>23 yr</li> --}}
+                                <li id="role3"><i class="ti-heart"></i></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:13px;">
+                        <div class="col-12">
+                            <ul style="display:flex; justify-content:center;">
+                                <li>
+                                    <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-facebook"></i></a>
+                                    <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-twitter"></i></a>
+                                    <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-skype"></i></a>
+                                    <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-linkedin"></i></a>
+                                    <a href="#" target="_blank" class="btn btn-circle btn-outline-primary"><i class="ti-world"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top:7px;">
+                        <div class="col-12">
+                            <table class="d-info" style="width:auto">
+                                <tr>
+                                    <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-user" style="padding:0px 10px;"></i>Name</td>
+                                    <td style="width:10%;text-align:center;">:</td>
+                                    <td style="width:50%" id="name4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-crown" style="padding:0px 10px;"></i>Email</td>
+                                    <td style="width:10%;text-align:center;">:</td>
+                                    <td style="width:50%" id="email2"></td>
+                                </tr>
+                                <tr>
+                                    <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-heart" style="color:red;padding:0px 10px;"></i>Role</td>
+                                    <td style="width:10%;text-align:center;">:</td>
+                                    <td style="width:50%;color:red;" id="role4"></td>
+                                </tr>
+                                <tr>
+                                    <td class="one" style="color:black;font-weight:500;font-size:14px;"> <i class="ti-mobile" style="padding:0px 10px;"></i>Creator</td>
+                                    <td style="width:10%;text-align:center;">:</td>
+                                    <td style="width:50%" id="creator2"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <a href="" id='deletelink2' class="btn btn-primary">Restore User</a>
+                  <a href="" id='deletelink' class="btn btn-primary">Delete User 2</a>
+                </div>
+              </div>
+            </div>
+        </div>
+
+</div>
+
+{{-- all deactive user --}}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body all-user" style="overflow-x:scroll;">
+                        <h3>All Deactive User</h3>
+                    <table id="dt-example-responsive2" class="table table-bordered"  cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>mail</th>
+                                <th>role</th>
+                                <th>creator</th>
+                                <th>photo</th>
+                                <th>manage</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            @php $i=1 @endphp
+                            @foreach ($deactive as $data)
+                            @php $check=$data->role_serial; $check= (int)$check; @endphp
+                            @php $role=App\user_role::where('role_serial',$check)->select('role_name')->firstOrFail();  @endphp
+                            <tr>
+                                <td style="vertical-align:middle;">{{$i++}}</td>
+                                <td style="vertical-align:middle;">{{$data->name}}</td>
+                                <td style="vertical-align:middle;">{{$data->email}}</td>
+                                <td style="vertical-align:middle;">{{$data->rolename->role_name}}</td>
+                                <td style="vertical-align:middle;">{{$data->creator}}</td>
+                                <td style="vertical-align:middle;">
+                                    <div class="div" style="height:70px; width:70px; overflow:hidden; border-radius:50%;padding:2px; border:1px solid gray;">
+                                        <img style="height:100%;width:100%;border-radius:50%;" id="profile-pic" src="{{asset('')}}{{$data->photo}}" alt="profile pic">
+                                    </div>
+                                </td>
+                                <td style="vertical-align:middle;">
+                                    {{-- <a href="{{route('user_view',$data->slug)}}"title="view user"><i class="fa fa-plus"></i></a> --}}
+                                    <a href="#" class="view-modal" id="viewData"
+                                    data-id="{{route('user_viewm',$data->slug)}}"
+                                    data-name="{{$data->name}}"
+                                    data-photo="{{asset('')}}{{$data->photo}}"
+                                    data-creator="{{$data->creator}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#viwModal" title="view user"><i class="fa fa-plus"></i></a>
+
+                                    <a href="#" id="update-modal"
+                                    data-id="{{route('user_update',$data->slug)}}"
+                                    data-name="{{$data->name}}"
+                                    data-roles="{{$data->role_serial}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" class="update-modal" data-toggle="modal" data-target="#updateModal" title="edit user information"><i class="fa fa-pencil"></i></a>
+
+                                    <a href="#" class="delete-modal" id="deleteData"
+                                    data-id="{{route('user_hard_delete',$data->slug)}}"
+                                    data-id2="{{route('user_restore',$data->slug)}}"
+                                    data-name="{{$data->name}}"
+                                    data-photo="{{asset('')}}{{$data->photo}}"
+                                    data-creator="{{$data->creator}}"
+                                    data-role="{{$data->rolename->role_name}}"
+                                    data-email="{{$data->email}}" data-toggle="modal" data-target="#deleteModal" title="delete user information"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            @endforeach
+
+                        </tbody>
+                    </table>
+                    <script type="text/javascript">
+                        document.addEventListener("DOMContentLoaded", function() {
+                            app._loading.show($("#dt-ext-responsive2"), {
+                                spinner: true
+                            });
+                            $("#dt-example-responsive2").DataTable({
+                                "responsive": false,
+                                "initComplete": function(settings, json) {
+                                    setTimeout(function() {
+                                        app._loading.hide($("#dt-ext-responsive2"));
+                                    }, 1000);
+                                }
+                            });
+                        });
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 

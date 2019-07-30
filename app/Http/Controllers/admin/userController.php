@@ -22,8 +22,9 @@ class userController extends Controller
 
     public function index()
     {
-        $all=user::get();
-        return view('admin.user.all',compact('all'));
+        $all=user::where('status',1)->get();
+        $deactive=user::where('status',0)->get();
+        return view('admin.user.all',compact('all','deactive'));
     }
 
     public function add(Request $request){
@@ -97,6 +98,25 @@ class userController extends Controller
         ]);
 
         if($softdelete){
+            return redirect()->route('user_index');
+        }
+    }
+
+    public function restore(Request $request,$slug){
+        $softdelete=user::where('slug',$slug)->update([
+            'status' => 1
+        ]);
+
+        if($softdelete){
+            return redirect()->route('user_index');
+        }
+    }
+
+    public function harddelete(Request $request,$slug){
+        $delete=user::where('slug',$slug)->select('photo')->firstOrFail();
+        Storage::disk('public')->delete($delete->photo);
+        $harddelete=user::where('slug',$slug)->delete();
+        if($harddelete){
             return redirect()->route('user_index');
         }
     }

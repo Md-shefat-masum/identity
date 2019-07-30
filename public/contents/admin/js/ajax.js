@@ -65,4 +65,18 @@ $(document).ready(function(){
         });
     });
 
+    // soft delete user ajax
+    $('.delete-modal').click(function(e) {
+        e.preventDefault();
+        $('#role3').html( $(this).data('role'));
+        $('#role4').html( $(this).data('role'));
+        $('#photo2').attr('src',$(this).data('photo'));
+        $('#name3').html( $(this).data('name') );
+        $('#name4').html( $(this).data('name'));
+        $('#email2').html( $(this).data('email'));
+        $('#creator2').html( $(this).data('creator'));
+        $('#deletelink2').attr('href', $(this).data('id2'));
+        $('#deletelink').attr('href', $(this).data('id'));
+    });
+
 });
