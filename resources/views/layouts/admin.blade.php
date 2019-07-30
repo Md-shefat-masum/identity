@@ -47,7 +47,7 @@
                 </div>
                 <div class="navbar-collapse">
                     <ul class="navbar-nav mr-auto mt-md-0">
-                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                        <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="#"><i class="mdi mdi-menu"></i></a> </li>
                         <li class="nav-item m-l-10"> <a class="nav-link sidebartoggler hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-muted text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-message"></i>
@@ -137,10 +137,10 @@
                                     </li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="index.html#"><i class="ti-user"></i> My Profile</a></li>
-                                    <li><a href="index.html#"><i class="ti-wallet"></i> My Balance</a></li>
-                                    <li><a href="index.html#"><i class="ti-email"></i> Inbox</a></li>
+                                    {{-- <li><a href="index.html#"><i class="ti-wallet"></i> My Balance</a></li> --}}
+                                    <li><a href="{{route('message_index')}}"><i class="ti-email"></i> Inbox</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="index.html#"><i class="ti-settings"></i> Account Setting</a></li>
+                                    <li><a href="{{route('user_settings',Auth::user()->slug)}}"><i class="ti-settings"></i> Account Setting</a></li>
                                     <li role="separator" class="divider"></li>
                                     <li><a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -161,7 +161,7 @@
                     </div>
                     <div class="profile-text">
                         <h5>{{ Auth::user()->name }} </h5>
-                        <a href="index.html#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
+                        <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"><i class="mdi mdi-settings"></i></a>
                         <a href="{{route('message_index')}}" class="" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
                         <a href="{{route('logout')}}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -171,7 +171,7 @@
                             <a href="index.html#" class="dropdown-item"><i class="ti-user"></i> My Profile</a>
                             <a href="{{route('message_index')}}" class="dropdown-item"><i class="ti-email"></i> Inbox</a>
                             <div class="dropdown-divider"></div>
-                            <a href="index.html#" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
+                            <a href="{{route('user_settings',Auth::user()->slug)}}" class="dropdown-item"><i class="ti-settings"></i> Account Setting</a>
                             <div class="dropdown-divider"></div>
                             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item"><i class="fa fa-power-off"></i> Logout</a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

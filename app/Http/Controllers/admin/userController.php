@@ -121,4 +121,9 @@ class userController extends Controller
         }
     }
 
+    // user settings
+    public function user_setting(Request $request){
+        return view('admin.setting.index');
+    }
+
 }
