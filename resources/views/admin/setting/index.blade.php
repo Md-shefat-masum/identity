@@ -75,11 +75,11 @@
                     <div class='col-md-6'>
                         <div class='card'>
                             <div class='card-body'>
-                                <form class='form p-t-20 form-material' enctype='multipart/form-data' method='POST' action="{{route('user_setting_change',$view->slug)}}">
+                                <form class='form p-t-20 form-material' novalidate enctype='multipart/form-data' method='POST' action="{{route('user_setting_change',$view->slug)}}">
                                     @csrf
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>Name</label>
+                                            <label for='name'>Name:</label>
                                         </div>
                                         <div class='input-group'>
                                             <input name='name' value='{{$view->name}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='name'>
@@ -88,43 +88,34 @@
 
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>Email</label>
+                                            <label for='name'>Email:</label>
                                         </div>
                                         <div class='input-group'>
                                             <input name='email' value='{{$view->email}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='email'>
                                         </div>
                                     </div>
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            <ul>
-                                                @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                @endforeach
-                                            </ul>
-                                        </div>
-                                    @endif
                                     <div class='form-group' {{ $errors->has('password') ? 'has-error' : ''}}>
                                         <div class='input-group'>
-                                            <label for='name'>Old Password</label>
+                                            <label for='name'>Old Password:</label>
                                         </div>
                                         <div class='input-group'>
-                                            <input name='password' value='{{old("password")}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
+                                            <input name='password' type="password" value='{{old("password")}}' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
                                         </div>
-                                        {!! $errors->first('password', '<p class="help-block" style="color:red">:message</p> <script>alert("error in password")</script>') !!}
+                                        {!! $errors->first('password', '<p class="help-block" style="color:red">password did not match to current password!!</p>') !!}
                                     </div>
 
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>New Password</label>
+                                            <label for='name'>New Password:</label>
                                         </div>
                                         <div class='input-group'>
-                                            <input name='newpassword' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
+                                            <input name='newpassword' type="password" value='' autofocus class=' form-control text-lower' id='exampleInputuname' placeholder='password'>
                                         </div>
                                     </div>
 
                                     <div class='form-group'>
                                         <div class='input-group'>
-                                            <label for='name'>Photo</label>
+                                            <label for='name'>Photo:</label>
                                         </div>
                                         <div class='input-group'>
                                             <input name='photo' value='' type="file" autofocus class='form-control text-lower' id='exampleInputuname' placeholder='input'>

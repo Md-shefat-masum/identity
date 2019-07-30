@@ -132,16 +132,46 @@ class userController extends Controller
         $password = $_POST['password'];
         // dd($password);
 
-        if (!Hash::check($password, $update->password)) {
-            $request->validate([
-                // 'password' => 'required|string|min:100|confirmed'
-                'password' => 'required|string|'
-            ]);
-            // return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
-         }
-        if($update){
-            return redirect()->route('user_settings',$slug);
+        if($_POST['password'] != ''){
+            if (!Hash::check($password, $update->password)) {
+                $request->validate([
+                    'password' => 'required|string|min:100'
+                ]);
+                // return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
+            }
         }
+
+        if($_POST['name'] != ''){
+            $update=user::where('slug',$slug)->update([
+                'name'=>$_POST['name']
+            ]);
+        }
+
+        if($_POST['email'] != ''){
+            $update=user::where('slug',$slug)->update([
+                'email'=>$_POST['email']
+            ]);
+        }
+
+        if($_POST['newpassword'] != ''){
+            $update=user::where('slug',$slug)->update([
+                'password'=>Hash::make($_POST['newpassword'])
+            ]);
+        }
+
+        if($request->hasFile('photo')){
+            $delete=user::where('slug',$slug)->select('photo')->firstOrFail();
+            Storage::disk('public')->delete($delete->photo);
+            $file=$request->file('photo');
+            $path=Storage::putFile('uploads/users',$file);
+            user::where('slug',$slug)->update([
+                'photo'=>$path
+            ]);
+        }
+
+
+        return redirect()->route('user_settings',$slug);
+
     }
 
     public function user_profile(Request $request,$slug){
