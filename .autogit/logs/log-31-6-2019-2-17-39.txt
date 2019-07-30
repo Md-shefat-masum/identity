@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Wed Jul 31 2019 02:17:39 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* public/contents/admin/assets/images/background/user-bg.jpg
+
+
+Created files:
+* public/uploads/aboutme_djfsjdflsdodsfe_1564517453.JPG
+
+
+Deleted files:
+
+
+Renamed files:
