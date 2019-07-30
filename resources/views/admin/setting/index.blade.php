@@ -71,7 +71,7 @@
                                             <label for='name'>New Password</label>
                                         </div>
                                         <div class='input-group'>
-                                            <input name='password' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
+                                            <input name='newpassword' value='' autofocus class='form-control text-lower' id='exampleInputuname' placeholder='password'>
                                         </div>
                                     </div>
 

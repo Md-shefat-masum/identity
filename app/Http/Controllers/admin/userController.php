@@ -128,7 +128,15 @@ class userController extends Controller
     }
 
     public function user_setting_change(Request $request,$slug){
-        return redirect()->route('user_setting_change');
+        $update=user::where('slug',$slug)->firstOrFail();
+        $password = $_POST['password'];
+        // dd($password);
+        if (!Hash::check($password, $update->password)) {
+            return response()->json(['success'=>false, 'message' => 'Login Fail, pls check password']);
+         }
+        if($update){
+            return redirect()->route('user_settings',$slug);
+        }
     }
 
     public function user_profile(Request $request,$slug){
