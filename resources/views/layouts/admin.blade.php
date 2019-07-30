@@ -193,13 +193,14 @@
                             <span class="hide-menu">Dashboard </span>
                             </a>
                         </li>
-
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-user-circle"></i><span class="hide-menu">User</span></a>
+                        @php global $permission; if(Auth::user()->role_serial != 1)$permission = "style='display:none;';"@endphp
+                        <li {{$permission}}> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-user-circle"></i><span class="hide-menu">User</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{url('admin/user')}}">All User </a></li>
                                 <li><a href="{{route('user_role_index')}}">User Role </a></li>
                             </ul>
                         </li>
+
 
                         <li>
                             <a href="{{url('admin/message')}}">

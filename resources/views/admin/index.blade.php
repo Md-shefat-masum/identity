@@ -128,6 +128,54 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <div class="card-actions">
+                            <a class="" data-action="collapse"><i class="ti-minus"></i></a>
+                            <a class="btn-minimize" data-action="expand"><i class="mdi mdi-arrow-expand"></i></a>
+                            <a class="btn-close" data-action="close"><i class="ti-close"></i></a>
+                        </div>
+                        <h4 class="card-title m-b-0">All Message</h4>
+                    </div>
+                    <div class="card-body collapse show">
+                        <div class="table-responsive">
+                            <table class="table product-overview">
+                                <thead>
+                                    <tr>
+                                        <th>name</th>
+                                        <th>email</th>
+                                        <th>Message</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $sms = App\contact_message::where('status',1)->orderBy('id','DESC')->get(); @endphp
+                                    @foreach ($sms as $item)
+                                        <tr>
+                                            <td>{{$item->name}}</td>
+                                            <td>{{$item->email}}</td>
+                                            <td>{{$item->message}}</td>
+                                            <td>
+                                                <span class="label label-success font-weight-100">{{$item->created_at}}</span>
+                                            </td>
+                                            <td>
+                                                <a href="{{route('message_view',$item->slug)}}" class="text-inverse p-r-10" data-toggle="tooltip" title="" data-original-title="View"><i class="ti-marker-alt"></i></a>
+                                                <a href="{{route('message_index')}}" class="text-inverse" title="" data-toggle="tooltip" data-original-title="All Message"><i class="mdi mdi-message"></i></a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 @endsection
