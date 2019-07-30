@@ -66,7 +66,7 @@
                 </script>
             </div>
         </div>
-        <div class='col-md-4'>
+        <div class='col-md-4' style="display:none;">
             <div class='card'>
                 <div class='card-body'>
                     <form class='form p-t-20' enctype='multipart/form-data' method='POST' action="{{route('user_role_add')}}">

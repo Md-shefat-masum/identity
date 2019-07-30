@@ -54,9 +54,7 @@
                             <div> <hr> </div>
                             <div class="card-body"> <small class="text-muted">Email address </small>
                                 <h6>{{$select->email}}</h6>
-                                @php
-                                    $select=App\aboutme::where('id',1)->firstOrFail();
-                                    @endphp
+                                @php $select=App\aboutme::where('id',1)->firstOrFail(); @endphp
                                 <small class="text-muted p-t-30 db">Phone</small>
                                 <h6>{{$select->phone}}</h6>
                                 <small class="text-muted p-t-30 db">Address</small>

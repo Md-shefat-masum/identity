@@ -283,11 +283,8 @@
     <script src="{{asset('contents/admin')}}/js/sidebarmenu.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/sticky-kit-master/dist/sticky-kit.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/custom.min.js"></script>
-    <script src="{{asset('contents/admin/assets')}}/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script src="{{asset('contents/admin/assets')}}/plugins/raphael/raphael-min.js"></script>
-    <script src="{{asset('contents/admin/assets')}}/plugins/morrisjs/morris.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/dashboard1.js"></script>
-    <script src="{{asset('contents/admin/assets')}}/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+
     <script src="{{asset('contents/admin')}}/js/app.js"></script>
     <script src="{{asset('contents/admin')}}/js/datatables.min.js"></script>
     <script src="{{asset('contents/admin/assets')}}/plugins/html5-editor/wysihtml5-0.3.0.js"></script>
@@ -295,6 +292,11 @@
     <script src="{{asset('contents/admin/assets')}}/plugins/dropify/dist/js/dropify.min.js"></script>
     <script src="{{asset('contents/admin')}}/js/validation.js"></script>
     <script src="{{asset('contents/admin')}}/js/ajax.js"></script>
+    <script src="{{asset('contents/admin/assets')}}/plugins/raphael/raphael-min.js"></script>
+    <script src="{{asset('contents/admin/assets')}}/plugins/morrisjs/morris.min.js"></script>
+    <script src="{{asset('contents/admin/assets')}}/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <script src="{{asset('contents/admin')}}/js/dashboard4.js"></script>
+    <script src="{{asset('contents/admin/assets')}}/plugins/styleswitcher/jQuery.style.switcher.js"></script>
 
     <script>
         $(document).ready(function() {
