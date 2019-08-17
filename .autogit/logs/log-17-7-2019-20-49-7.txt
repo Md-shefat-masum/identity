@@ -1,0 +1,15 @@
+-------------------- Auto-Git Log --------------------
+		Sat Aug 17 2019 20:49:07 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+
+
+Created files:
+* .autogit/logs/log-17-7-2019-20-19-1.txt
+
+
+Deleted files:
+
+
+Renamed files:
