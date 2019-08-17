@@ -70,6 +70,4 @@ class websiteController extends Controller
         }
     }
 
-
-
 }
